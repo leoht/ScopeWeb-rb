@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  short_content: MyText
+  content: MyText
+  timecode: MyString
+  type: 
+  image: MyString
+
+two:
+  title: MyString
+  short_content: MyText
+  content: MyText
+  timecode: MyString
+  type: 
+  image: MyString

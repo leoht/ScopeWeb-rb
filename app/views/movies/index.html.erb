@@ -1,0 +1,11 @@
+<h1>Liste des films</h1>
+
+<ul>
+<% for movie in @movies %>
+	<li><div>
+		<b><%= movie.title %></b> de <%= movie.author %>
+		<p><%= movie.summary %></p>
+		<%= link_to 'Watch', watch_movie_path(movie) %>
+	</div></li>
+<% end %>
+</ul>

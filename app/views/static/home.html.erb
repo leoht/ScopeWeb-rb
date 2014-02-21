@@ -1,0 +1,11 @@
+<h1>Static#home</h1>
+<p>Find me in app/views/static/home.html.erb</p>
+
+<% if current_user %>
+	Connecté : <%= @user.name %>
+	<p>
+	<% for friend in @user_data.friends %>
+		<a href="http://www.facebook.com/<%= friend.raw_attributes['id'] %>"><%= friend.name %></a><br />
+	<% end %>
+	</p>
+<% end %>

@@ -29,3 +29,7 @@ var PLAY = 'api.movie.play';
 var PAUSE = 'api.movie.pause';
 
 var SET_VOLUME = 'api.movie.volume';
+
+var FAST_FORWARD = 'api.movie.forward';
+
+var FAST_REWIND = 'api.movie.rewind';

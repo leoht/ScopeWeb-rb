@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20140221113519) do
     t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "movid_id"
     t.integer  "movie_id"
   end
 

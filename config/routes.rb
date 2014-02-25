@@ -5,7 +5,9 @@ Scope::Application.routes.draw do
 
   root 'static#home'
 
-  get 'auth/:provider(/callback)', to: 'sessions#create'
+  get 'about', to: 'static#about'
+
+  get 'auth/:provider(/callback)', to: 'sessions#create', as: 'login', defaults: { :provider => 'facebook' }
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
 

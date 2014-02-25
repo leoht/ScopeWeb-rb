@@ -6,4 +6,8 @@ class StaticController < ApplicationController
 		@user_data.fetch
 	end
   end
+
+  def about
+
+  end
 end

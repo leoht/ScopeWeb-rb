@@ -11,3 +11,9 @@ api.on PAUSE, (data) ->
 
 api.on SET_VOLUME, (data) ->
 	mediaPlayer.volume = data.volume
+
+api.on FAST_FORWARD, (data) ->
+	toggleFastForward()
+
+api.on FAST_REWIND, (data) ->
+	toggleFastRewind()

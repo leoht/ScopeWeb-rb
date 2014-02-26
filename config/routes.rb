@@ -21,6 +21,10 @@ Scope::Application.routes.draw do
     resources :notices, shallow: true do
       get 'share',  on: :member
     end
+
+    resources :comments, shallow: true do
+      get 'share',  on: :member
+    end
   end
 
 

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  content: MyText
+  timecode: MyString
+  created_at: 2014-02-26 16:15:35
+
+two:
+  content: MyText
+  timecode: MyString
+  created_at: 2014-02-26 16:15:35

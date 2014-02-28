@@ -1,11 +1,5 @@
-<h1>Static#home</h1>
-<p>Find me in app/views/static/home.html.erb</p>
+<div class="container home">
+	<h1 class="home-title with-font">SC<span class="blue">0</span>PE</h1>
 
-<% if current_user %>
-	Connecté : <%= @user.name %>
-	<p>
-	<% for friend in @user_data.friends %>
-		<a href="http://www.facebook.com/<%= friend.raw_attributes['id'] %>"><%= friend.name %></a><br />
-	<% end %>
-	</p>
-<% end %>
+	<h3 class="home-subtitle">L'oeil ouvert sur le monde</h3>
+</div>

@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :comments
+  has_many :comments, inverse_of: :user
+  has_many :viewed_notices, class_name: 'Notice'
   
   def self.from_omniauth(auth)
   	where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|

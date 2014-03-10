@@ -16,3 +16,5 @@ movie.file = 'film.mp4'
 movie.save
 
 notice = movie.notices.create(title: 'Star Wars')
+
+movie.related_movies.create(title: 'Star Wars', summary: 'Star Wars', year: 1984)

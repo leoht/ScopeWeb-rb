@@ -1,3 +1,51 @@
 // Place all the styles related to the movies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$scope_blue: #04e5e8;
+
+.movie {
+	text-align: center;
+	text-transform: uppercase;
+	padding-top: 130px;
+
+	.movie-author, .movie-year {
+		font-size: 22px;
+		width: 450px;
+		margin: auto;
+		padding: 25px 0 25px 0;
+	}
+
+	h1.movie-title {
+		font-size: 82px;
+		margin: 20px 0;
+	}
+
+	.movie-author {
+		border-bottom: 1px solid white;
+	}
+
+	.movie-year {
+		border-top: 1px solid white;
+	}
+
+	.movie-actions {
+		margin: 50px auto 0 auto;
+		width: 650px;
+
+
+		.movie-more, .movie-watch {
+			width: 250px;
+			margin: 15px;
+			display: inline-block;
+		}
+
+	}
+
+	.movie-new-search {
+		display: block;
+		text-transform: none;
+		color: $scope_blue;
+		margin-top: 25px;
+	}
+}

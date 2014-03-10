@@ -7,7 +7,10 @@
 	%h3.home-subtitle L'oeil ouvert sur le monde
 
 	.home-actions
-		= link_to 'Inscription rapide', :login, id: 'sign_in', class: 'blue'
+		%a{ href: '/auth/facebook', id: 'sign_in', class: 'blue' }
+			%img{ src: image_path('/assets/profile.png') }
+			%br
+			Inscription rapide
 
 	.home-actions
 		= link_to 'On vous trouve un film', :find_movies, class: 'button-link'

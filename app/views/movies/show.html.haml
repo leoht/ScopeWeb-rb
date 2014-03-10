@@ -1,0 +1,19 @@
+.movie
+	.movie-author
+		= @movie.author
+
+	%h1.movie-title.with-font
+		= @movie.title
+
+	.movie-year
+		= @movie.year
+
+	.movie-actions
+		%a.movie-more.button-link{ href: more_movie_path(@movie) }
+			En savoir +
+
+		%a.movie-watch.button-link{ href: watch_movie_path(@movie) }
+			Lecture du film
+
+	%a.movie-new-search{ href: movies_path }
+		nouvelle recherche

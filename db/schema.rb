@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140227132947) do
+ActiveRecord::Schema.define(version: 20140310100225) do
 
   create_table "comments", force: true do |t|
     t.text     "content"
@@ -19,6 +19,19 @@ ActiveRecord::Schema.define(version: 20140227132947) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "movie_id"
+  end
+
+  create_table "movie_related_facts", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "photo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "movie_related_facts_movies", id: false, force: true do |t|
+    t.integer "movie_id",              null: false
+    t.integer "movie_related_fact_id", null: false
   end
 
   create_table "movies", force: true do |t|
@@ -31,6 +44,26 @@ ActiveRecord::Schema.define(version: 20140227132947) do
     t.datetime "updated_at"
   end
 
+  create_table "movies_movies", id: false, force: true do |t|
+    t.integer "movie_id", null: false
+  end
+
+  create_table "movies_related_movies", id: false, force: true do |t|
+    t.integer "movie_id",         null: false
+    t.integer "related_movie_id", null: false
+  end
+
+  create_table "notice_categories", force: true do |t|
+    t.string   "title"
+    t.string   "nicename"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "notice_categories_notice_categories", id: false, force: true do |t|
+    t.integer "notice_category_id", null: false
+  end
+
   create_table "notices", force: true do |t|
     t.string   "title"
     t.text     "short_content"
@@ -40,8 +73,17 @@ ActiveRecord::Schema.define(version: 20140227132947) do
     t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "movid_id"
     t.integer  "movie_id"
+    t.integer  "category_id"
+  end
+
+  create_table "related_movies", force: true do |t|
+    t.string   "title"
+    t.string   "image"
+    t.text     "summary"
+    t.integer  "year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

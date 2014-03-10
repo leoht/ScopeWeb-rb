@@ -20,7 +20,7 @@ a {
 
 .button-link {
 	color: white;
-	border: 2px solid $scope_blue;
+	border: 1px solid $scope_blue;
 	text-transform: uppercase;
 	padding: 10px;
 	text-decoration: none;			
@@ -42,5 +42,24 @@ a {
 		bottom: 0;
 		color: white;
 		font-size: 30px;
+	}
+
+	.nav-right {
+		float: right;
+		position: relative; top: 15px;
+	}
+
+	.nav-search {
+		display: inline;
+		position: relative; bottom: 10px;
+
+		form { display: inline; }
+
+		input {
+			height: 20px;
+			width: 200px;
+
+			text-transform: uppercase;
+		}
 	}
 }

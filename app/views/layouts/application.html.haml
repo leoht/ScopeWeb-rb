@@ -17,11 +17,16 @@
 			= link_to 'Les films', :movies
 
 			= link_to 'On trouve pour vous', :find_movies
+
+			.nav-search
+				%form.search-form{ action: search_movies_path, method: :get }
+					%input{ type: :text, name: :s, placeholder: 'Rechercher un film' }
 			
-			- if current_user
-				= link_to 'Déconnexion', signout_path, id: 'sign_out'
-			- else
-				= link_to 'Se connecter avec Facebook', login_path, id: 'sign_in'
+			.nav-right
+				- if current_user
+					= link_to 'Déconnexion', signout_path, id: 'sign_out'
+				- else
+					= link_to 'Se connecter avec Facebook', login_path, id: 'sign_in'
 
 
 		= yield

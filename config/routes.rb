@@ -19,6 +19,7 @@ Scope::Application.routes.draw do
 
   resources :movies do
     get 'watch',  on: :member
+    get 'more',   on: :member
     get 'find',   on: :collection
     get 'search', on: :collection
 

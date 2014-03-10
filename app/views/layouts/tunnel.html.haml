@@ -1,0 +1,18 @@
+!!! 5
+%html
+	%head
+		%title Scope
+		= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true 
+		= javascript_include_tag "application", "data-turbolinks-track" => true
+		= csrf_meta_tags
+		= yield :head
+
+	%body
+
+	%nav.navbar.tunnel-nav
+		%a.nav-scope.with-font{ href: '/' }
+			SC
+			%span.blue> 0
+			PE
+
+	= yield

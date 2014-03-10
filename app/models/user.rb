@@ -11,4 +11,9 @@ class User < ActiveRecord::Base
   	  user.save!
   	end
   end
+
+  def profile_picture
+    user = FbGraph::User.fetch(uid)
+    user.picture + '?type=large'
+  end
 end

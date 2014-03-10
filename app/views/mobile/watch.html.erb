@@ -1,0 +1,36 @@
+
+
+<div id="progressBar">
+</div>
+
+<script>
+var paper = Raphael("progressBar", 200, 200);
+paper.customAttributes.arc = function (centerX, centerY, startAngle, endAngle, arcEdge) {
+  var radians = Math.PI / 180,
+  largeArc = +(endAngle - startAngle > 180),
+  // calculate the start and end points for both inner and outer edges of the arc segment
+  // the -90s are about starting the angle measurement from the top get rid of these if this doesn't suit your needs
+  outerX1 = centerX + arcEdge * Math.cos((startAngle-90) * radians),
+  outerY1 = centerY + arcEdge * Math.sin((startAngle-90) * radians),
+  outerX2 = centerX + arcEdge * Math.cos((endAngle-90) * radians),
+  outerY2 = centerY + arcEdge * Math.sin((endAngle-90) * radians);
+  
+  // build the path array
+  var path = [
+    ["M", outerX1, outerY1], //move to the start point
+    ["A", arcEdge, arcEdge, 0, largeArc, 1, outerX2, outerY2] //draw the outer edge of the arc
+  ];                   
+  return {path: path};
+};
+ 
+var background = paper.circle(55, 55, 45).attr({stroke: "#f1f2f1", "stroke-width": 20});
+var circle = paper.path().attr( {stroke: "#000000", "stroke-width": 20,  arc: [55, 55, 0, 1, 45] } );
+var animRotation = Raphael.animation({transform: 'r360,55,55'}, 2500).repeat(Infinity);
+circle.animate(animRotation);
+ 
+// update value based on percent uploaded for e.g
+// var percent = evt.loaded/evt.total * 100;
+// var percentDegree = Math.round(percent * 3.6);
+// circle.attr( { arc: [55, 55, 0, percentDegree - 0.01, 45] } );
+// text.attr({text: Math.round(percent) + '%'});
+</script>

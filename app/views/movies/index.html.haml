@@ -1,0 +1,11 @@
+%h1 Liste des films
+
+%ul
+	- for movie in @movies
+		%li
+			%div
+				%b= link_to movie.title, movie
+				de
+				= movie.author
+				%p= movie.summary
+				= link_to 'Watch', watch_movie_path(movie)

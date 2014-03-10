@@ -1,0 +1,27 @@
+!!! 5
+%html
+	%head
+		%title Scope
+		= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true 
+		= javascript_include_tag "application", "data-turbolinks-track" => true
+		= csrf_meta_tags
+		= yield :head
+
+	%body
+		%nav.navbar
+			%a{ href: "/", class: "nav-scope with-font"}
+				SC
+				%span.blue> 0
+				PE
+
+			= link_to 'Les films', :movies
+
+			= link_to 'On trouve pour vous', :find_movies
+			
+			- if current_user
+				= link_to 'Déconnexion', signout_path, id: 'sign_out'
+			- else
+				= link_to 'Se connecter avec Facebook', login_path, id: 'sign_in'
+
+
+		= yield

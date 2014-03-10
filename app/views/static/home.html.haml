@@ -1,0 +1,14 @@
+.container.home
+	%h1.home-title.with-font
+		SC
+		%span.blue> 0
+		PE
+
+	%h3.home-subtitle L'oeil ouvert sur le monde
+
+	.home-actions
+		= link_to 'Inscription rapide', :login, id: 'sign_in', class: 'blue'
+
+	.home-actions
+		= link_to 'On vous trouve un film', :find_movies, class: 'button-link'
+		= link_to 'Accès direct', :movies, class: 'button-link'

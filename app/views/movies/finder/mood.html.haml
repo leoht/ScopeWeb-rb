@@ -1,0 +1,12 @@
+.finder.finder-mood
+	%h1.finder-title.with-font Vous avez besoin...
+
+	.mood-buttons
+		.button-link#mood-laugh{ data: { mood: 'laugh' } } De rire
+		.button-link#mood-scared{ data: { mood: 'scared' } } De frissons
+		.button-link#mood-escape{ data: { mood: 'escape' } } De s'évader
+		.button-link#mood-action{ data: { mood: 'action' } } D'action
+		.button-link#mood-emotions{ data: { mood: 'emotions' } } D'émotions
+
+	.next
+		= link_to 'Suivant', find_movies_path(step: 2)

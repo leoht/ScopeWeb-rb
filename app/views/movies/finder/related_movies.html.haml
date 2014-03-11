@@ -1,0 +1,13 @@
+.finder.finder-movies
+	%h1.finder-title.with-font Avez-vous aimé...
+
+	.related-movies
+		- for i in 1..5
+			.movie{ :class => "movie-#{i}" }
+				.poster
+					%img.poster-img
+		.no
+			non
+
+		.yes
+			oui

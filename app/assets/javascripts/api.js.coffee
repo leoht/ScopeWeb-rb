@@ -17,10 +17,10 @@ class window.Api
 
 			if data.name is 'api.associated.token'
 				@token = data.data.token
-			else
-				if data.name of @callbacks
-					cb = @callbacks[data.name]
-					cb(data.data)
+
+			if data.name of @callbacks
+				cb = @callbacks[data.name]
+				cb(data.data)
 
 		@socket.onopen = ->
 			callback.call()
@@ -33,6 +33,8 @@ class window.Api
 
 		if @token != ''
 			message.token = @token
+
+		console.log 'Sending: ' + JSON.stringify message
 
 		@socket.send JSON.stringify(message)
 

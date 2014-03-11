@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140310100225) do
+ActiveRecord::Schema.define(version: 20140311125855) do
 
   create_table "comments", force: true do |t|
     t.text     "content"
@@ -53,6 +53,14 @@ ActiveRecord::Schema.define(version: 20140310100225) do
     t.integer "related_movie_id", null: false
   end
 
+  create_table "movies_tags", id: false, force: true do |t|
+    t.integer "tag_id",   null: false
+    t.integer "movie_id", null: false
+  end
+
+  add_index "movies_tags", ["movie_id", "tag_id"], name: "index_movies_tags_on_movie_id_and_tag_id"
+  add_index "movies_tags", ["tag_id", "movie_id"], name: "index_movies_tags_on_tag_id_and_movie_id"
+
   create_table "notice_categories", force: true do |t|
     t.string   "title"
     t.string   "nicename"
@@ -77,11 +85,25 @@ ActiveRecord::Schema.define(version: 20140310100225) do
     t.integer  "category_id"
   end
 
+  create_table "notices_tags", id: false, force: true do |t|
+    t.integer "tag_id",    null: false
+    t.integer "notice_id", null: false
+  end
+
+  add_index "notices_tags", ["notice_id", "tag_id"], name: "index_notices_tags_on_notice_id_and_tag_id"
+  add_index "notices_tags", ["tag_id", "notice_id"], name: "index_notices_tags_on_tag_id_and_notice_id"
+
   create_table "related_movies", force: true do |t|
     t.string   "title"
     t.string   "image"
     t.text     "summary"
     t.integer  "year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags", force: true do |t|
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

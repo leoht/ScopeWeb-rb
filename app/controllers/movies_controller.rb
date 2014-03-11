@@ -10,21 +10,19 @@ class MoviesController < ApplicationController
 
 	# Find a movie based on user tastes, etc...
 	def find
-		if session[:quiz_step].nil?
-			session[:quiz_step] = 1
+		if not request.params['step']
+			@step = 1
 		else
-			session[:quiz_step] += 1
+			@step = request.params['step']
 		end
 
-		case session[:quiz_step]
-		when 1 then
-			render 'movies/find_by_mood', layout: 'tunnel'
-		when 2 then
-			session[:quiz_mood] = params[:mood]
-			render 'movies/find_by_related_movies', layout: 'tunnel'
-		# when 3 then
-
-		else render 'movies/find_by_mood', layout: 'tunnel'
+		case @step
+		when '1' then
+			render 'movies/finder/mood', layout: 'tunnel'
+		when '2' then
+			render 'movies/finder/related_movies', layout: 'tunnel'
+		when '3' then
+			render 'movies/finder/related_facts', layout: 'tunnel'
 		end
 	end
 

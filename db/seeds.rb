@@ -15,6 +15,6 @@ movie.year = 1929
 movie.file = 'film.mp4'
 movie.save
 
-notice = movie.notices.create(title: 'Star Wars')
+notice = movie.notices.create(title: 'Star Wars', timecode: '8')
 
 movie.related_movies.create(title: 'Star Wars', summary: 'Star Wars', year: 1984)

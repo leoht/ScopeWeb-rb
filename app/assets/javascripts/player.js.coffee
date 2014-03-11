@@ -1,8 +1,6 @@
 window.isFastForwarding = false
 window.isFastRewinding  = false
 
-$('video').click 
-
 window.initializeMediaPlayer = ->
 	window.mediaPlayer = document.getElementById 'player'
 	window.mediaPlayer.controls = false

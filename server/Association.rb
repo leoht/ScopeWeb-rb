@@ -78,6 +78,17 @@ module Scope
     def dispatch(message)
       raise "Message to dispatch must be instance of TokenizedMessage" unless message.kind_of? Scope::TokenizedMessage
 
+      if message.name == MessageTypes::REQUEST_FOR_NOTICE_AT_TIMECODE
+        notice = ::Notice.where('movie_id = ?', message.get('movie_id'))
+        if notice.kind_of? ::Notice
+          message = Message.new
+          message.direction = MessageTypes::BROADCAST
+          message.name = MessageTypes::NOTICE_AT_TIMECODE
+          message.data = { :title => notice.title }
+          puts " [x] Sending notice for timecode : " + message.get('timecode')
+        end
+      end
+
       json_message = JSON.generate({
          :direction => message.direction,
          :name      => message.name,
@@ -86,8 +97,11 @@ module Scope
 
       if message.direction == MessageTypes::FROM_PLAYER_TO_DEVICE
           @mobile_socket.send(json_message)
-      else
+      elsif message.direction == MessageTypes::FROM_DEVICE_TO_PLAYER
           @player_socket.send(json_message)
+      else # broadcast
+        @mobile_socket.send json_message
+        @player_socket.send json_message
       end
     end
 

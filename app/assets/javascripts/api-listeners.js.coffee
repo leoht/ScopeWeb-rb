@@ -5,7 +5,7 @@ api.on ASSOCIATION_INITIATED_WITH_CODE, (data) ->
 
 api.on ASSOCIATED_WITH_TOKEN, (data) ->
 	api.send MOVIE_INFO, {
-		id: 1,
+		movie_id: 1,
 		title: 'Metropolis',
 		author: 'Fritz Lang',
 		duration: window.mediaPlayer.duration

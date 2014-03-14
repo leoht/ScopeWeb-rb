@@ -79,13 +79,14 @@ module Scope
       raise "Message to dispatch must be instance of TokenizedMessage" unless message.kind_of? Scope::TokenizedMessage
 
       if message.name == MessageTypes::REQUEST_FOR_NOTICE_AT_TIMECODE
-        notice = ::Notice.where('movie_id = ?', message.get('movie_id'))
+        notice = ::Notice.where('movie_id = ? and timecode = ?', message.get('movie_id').to_s, message.get('timecode').to_s).first
+
         if notice.kind_of? ::Notice
           message = Message.new
           message.direction = MessageTypes::BROADCAST
           message.name = MessageTypes::NOTICE_AT_TIMECODE
-          message.data = { :title => notice.title }
-          puts " [x] Sending notice for timecode : " + message.get('timecode')
+          message.data = { :title => notice.title, :content => notice.content, :timecode => notice.timecode, :short_content => notice.short_content, :image => notice.image, :category => notice.parent.title, :category_nicename => notice.parent.nicename }
+          puts " [x] Sending notice for timecode : " + message.get('timecode').to_s
         end
       end
 

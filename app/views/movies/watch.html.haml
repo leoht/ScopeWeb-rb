@@ -9,20 +9,31 @@
 
         %button.get-code-button Get code
 
-:javascript
-    window.onload = function () {
-        api.beginConnection(function () {
-            console.log('connected')
-             document
-            .querySelectorAll('.get-code-button')[0]
-            .addEventListener('click', function () {
-                api.beginConnection(function () {
-                    api.send(BEGIN_CODE_ASSOCIATION, {})
-                })
-            });
-        });
-    };
+    - if current_user
+        :javascript
+            var FACEBOOK_ID = "#{current_user.uid}";
+    
 
-    document.addEventListener('DOMContentLoaded', function () {
-        initializeMediaPlayer()
-    });
+    :javascript
+        window.onload = function () {
+            api.beginConnection(function () {
+                console.log('connected')
+                if (typeof FACEBOOK_ID != 'undefined') {
+                    api.beginConnection(function () {
+                        api.send(BEGIN_FACEBOOK_ASSOCIATION, { 'facebook_id': FACEBOOK_ID });
+                    })
+                } else {
+                     document
+                    .querySelectorAll('.get-code-button')[0]
+                    .addEventListener('click', function () {
+                        api.beginConnection(function () {
+                            api.send(BEGIN_CODE_ASSOCIATION, {})
+                        })
+                    });
+                }
+            });
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+            initializeMediaPlayer()
+        });

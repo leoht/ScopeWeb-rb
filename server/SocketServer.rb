@@ -67,7 +67,7 @@ module Scope
 
       elsif message.name == MessageTypes::ASSOCIATE_WITH_FACEBOOK || message.name == MessageTypes::ASSOCIATE_WITH_CODE 
 
-          identifier = !message.get('code').nil? ? message.get('code') : message.get('facebook_id')
+          identifier = message.name == MessageTypes::ASSOCIATE_WITH_CODE ? message.get('code') : message.get('facebook_id')
 
           puts identifier
 

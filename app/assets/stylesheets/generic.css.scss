@@ -29,6 +29,10 @@ a {
 .navbar {
 	padding: 8px 10px 6px 20px;
 	border-bottom: 2px solid $scope_blue;
+	z-index: 200;
+	position: absolute; top: 0; left: 0;
+	background: #000;
+	width: 100%;
 
 	a {
 		color: white;
@@ -46,7 +50,7 @@ a {
 
 	.nav-right {
 		float: right;
-		position: relative; top: 15px;
+		position: relative; top: 15px; right: 25px;
 	}
 
 	.nav-search {
@@ -63,3 +67,5 @@ a {
 		}
 	}
 }
+
+.navbar.no-border { border: none; }

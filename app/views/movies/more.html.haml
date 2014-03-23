@@ -1,9 +1,32 @@
 .movie.movie-more
-	.movie-author
-		= @movie.author
+	.hidden-nav
+		.doc
+		.watch
+		.social
 
-	%h1.movie-title.with-font
-		= @movie.title
+	.movie-more-head
+		.movie-author
+			= @movie.author
 
-	.movie-year
-		= @movie.year
+		%h1.movie-title.with-font
+			= @movie.title
+
+		.movie-year
+			= @movie.year
+
+		.movie-more-nav
+			.doc
+				%a.button-link{ href: documentation_movie_path(@movie) } Documentation
+			.watch
+				%a.button-link{ href: watch_movie_path(@movie) } Lecture
+			.social
+				%a.button-link{ href: community_movie_path(@movie) } Communauté
+
+	.movie-more-content
+		.synopsis
+			%h2.with-font SYN0PSIS
+			%p
+			.discover-more
+				%a{ href: '#trailer' } Découvrir
+
+		.trailer#trailer

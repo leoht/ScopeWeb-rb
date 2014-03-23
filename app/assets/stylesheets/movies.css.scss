@@ -4,16 +4,27 @@
 
 $scope_blue: #04e5e8;
 
+/****************************
+		MOVIE / SHOW
+****************************/
+
 .movie {
 	text-align: center;
 	text-transform: uppercase;
-	padding-top: 130px;
+	padding-top: 80px;
 
 	.movie-author, .movie-year {
 		font-size: 22px;
 		width: 450px;
 		margin: auto;
 		padding: 25px 0 25px 0;
+	}
+
+	.movie-scope {
+		bottom: 0;
+		color: white;
+		font-size: 30px;
+		padding-bottom: 60px;
 	}
 
 	h1.movie-title {
@@ -49,6 +60,77 @@ $scope_blue: #04e5e8;
 		margin-top: 25px;
 	}
 }
+
+
+/****************************
+		MOVIE / MORE
+****************************/
+
+div.movie-more {
+	padding-top: 0;
+	height: 100%;
+	min-height: 2000px; // dirty, to remove
+	background: #eee;
+
+	.hidden-nav {
+		position: relative; z-index: 150;
+		width: 100%;
+		height: 50px;
+		background: #232323;
+		border-bottom: 1px solid $scope_blue;
+		text-align: center;
+		top: 0px;
+	}
+
+	.movie-more-head {
+		background: #000;
+		padding-top: 45px;
+
+		.movie-author, .movie-year { border: none; padding: 0; font-size: 18px; }
+		h1.movie-title { margin: 0; font-size: 60px; }
+
+		.movie-more-nav {
+			width: 600px;
+			height: 70px;
+			margin: 40px auto 0 auto;
+
+			div {
+				float: left;
+				width: 200px;
+			}
+
+			.button-link {
+				display: block;
+				font-size: 12px;
+				width: 130px;
+				margin: auto;
+				height: 15px;
+				padding: 6px;
+			}
+		}
+	}
+
+	
+
+	.movie-more-content {
+		.synopsis {
+			h2 { color: red; font-size: 27px; letter-spacing: 3px;}
+			p { height: 250px; }
+		}
+
+		.trailer {
+			width: 100%; height: 100%;
+			background: #000;
+		}
+
+		.discover-more { text-transform: uppercase; position: absolute; bottom: 20px; left: 0; width: 100%; }
+		.discover-more a { color: black; } 
+	}
+}
+
+/****************************
+		MOVIE FINDER
+****************************/
 
 .finder {
 	text-align: center;

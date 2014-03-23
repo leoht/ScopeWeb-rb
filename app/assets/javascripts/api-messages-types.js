@@ -34,4 +34,8 @@ var FAST_FORWARD = 'api.movie.forward';
 
 var FAST_REWIND = 'api.movie.rewind';
 
+var NEXT_CHAPTER = 'api.movie.next';
+
+var PREV_CHAPTER = 'api.movie.prev';
+
 var MOVIE_INFO = 'api.movie.info';

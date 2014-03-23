@@ -54,14 +54,13 @@ ActiveRecord::Schema.define(version: 20140311153032) do
     t.datetime "updated_at"
   end
 
-  create_table "movies_movies", id: false, force: true do |t|
-    t.integer "movie_id", null: false
-  end
-
   create_table "movies_related_movies", id: false, force: true do |t|
     t.integer "movie_id",         null: false
     t.integer "related_movie_id", null: false
   end
+
+  add_index "movies_related_movies", ["movie_id", "related_movie_id"], name: "index_movies_related_movies_on_movie_id_and_related_movie_id"
+  add_index "movies_related_movies", ["related_movie_id", "movie_id"], name: "index_movies_related_movies_on_related_movie_id_and_movie_id"
 
   create_table "movies_tags", id: false, force: true do |t|
     t.integer "tag_id",   null: false

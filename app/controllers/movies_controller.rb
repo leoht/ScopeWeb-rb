@@ -1,17 +1,19 @@
 class MoviesController < ApplicationController
+
+	before_action :set_movie, only: [:show, :watch, :more, :documentation, :community]
 	
 	def index
 		@movies = Movie.all
 	end
 
 	def show
-		@movie = Movie.find(params[:id])
+		render 'movies/show', layout: 'full'
 	end
 
 	# Find a movie based on user tastes, etc...
 	def find
 		if not request.params['step']
-			@step = 1
+			@step = '1'
 		else
 			@step = request.params['step']
 		end
@@ -28,11 +30,15 @@ class MoviesController < ApplicationController
 
 	# The movie player
 	def watch
-		@movie = Movie.find(params[:id])
 	end
 
 	def more
-		@movie = Movie.find(params[:id])
+	end
+
+	def documentation
+	end
+
+	def community
 	end
 
 	def search
@@ -40,4 +46,9 @@ class MoviesController < ApplicationController
 		s = '%'+ @query + '%'
 		@movies = Movie.find(:all, :conditions => ['title LIKE ? OR summary LIKE ? OR author LIKE ?', s, s, s])
 	end
+
+	private
+		def set_movie
+			@movie = Movie.find(params[:id])
+		end
 end

@@ -18,8 +18,10 @@ Scope::Application.routes.draw do
   resources :sessions, only: [:create, :destroy]
 
   resources :movies do
-    get 'watch',  on: :member
-    get 'more',   on: :member
+    get 'watch',         on: :member
+    get 'more',          on: :member
+    get 'documentation', on: :member
+    get 'community',     on: :member
     get 'find',   on: :collection
     get 'search', on: :collection
 

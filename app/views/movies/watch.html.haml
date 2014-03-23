@@ -13,6 +13,10 @@
         :javascript
             var FACEBOOK_ID = "#{current_user.uid}";
     
+    %script
+        var CHAPTERS = [];
+        - for chapter in @movie.chapters
+            CHAPTERS[#{chapter.number}] = #{chapter.timecode};
 
     :javascript
         window.onload = function () {

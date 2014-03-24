@@ -7,15 +7,22 @@ window.isMenuDisplayed = false
 $(document).ready ->
 	$('.discover-more a').click ->
 
-	$(document).scroll ->
+	$('.synopsis').waypoint ->
 		if window.isMenuDisplayed
 			return
 
 		window.isMenuDisplayed = true
 
-		# $('.hidden-nav').animate {
-		# 	top: '+=50px'
-		# }, 500
+		$('.hidden-nav').animate {
+			top: '+=55px'
+		}, 500
 
+	$('.movie-more-nav').waypoint ->
+		if not window.isMenuDisplayed
+			return
 
-		
+		window.isMenuDisplayed = false
+
+		$('.hidden-nav').animate {
+			top: '-=55px'
+		}, 500

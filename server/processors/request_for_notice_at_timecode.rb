@@ -14,6 +14,8 @@ module Scope
           message.data = { :id => notice.id, :title => notice.title, :short_content => notice.short_content, :category_nicename => 'impact' }
           puts " [x] Sending notice for timecode : " + message.get('timecode').to_s
         end
+
+        return message
   	  end
   	end
   end

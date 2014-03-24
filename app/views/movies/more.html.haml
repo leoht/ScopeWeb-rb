@@ -1,8 +1,9 @@
 .movie.movie-more
 	.hidden-nav
-		.doc
-		.watch
-		.social
+		.hidden-nav-wrapper
+			%a.doc{ href: documentation_movie_path(@movie) } 
+			%a.watch{ href: watch_movie_path(@movie) } 
+			%a.social{ href: community_movie_path(@movie) } 
 
 	.movie-more-head
 		.movie-author

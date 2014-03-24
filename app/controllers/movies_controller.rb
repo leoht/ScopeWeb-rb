@@ -20,8 +20,10 @@ class MoviesController < ApplicationController
 
 		case @step
 		when '1' then
+			@percent = 0
 			render 'movies/finder/mood', layout: 'tunnel'
 		when '2' then
+			@percent = 30
 			render 'movies/finder/related_movies', layout: 'tunnel'
 		when '3' then
 			render 'movies/finder/related_facts', layout: 'tunnel'

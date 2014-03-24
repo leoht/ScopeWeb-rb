@@ -13,9 +13,9 @@ $(document).ready ->
 
 		window.isMenuDisplayed = true
 
-		$('.hidden-nav').animate {
-			top: '+=50px'
-		}, 500
+		# $('.hidden-nav').animate {
+		# 	top: '+=50px'
+		# }, 500
 
 
 		

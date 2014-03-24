@@ -7,12 +7,27 @@
 		= csrf_meta_tags
 		= yield :head
 
-	%body
+	%body.with-layout{ :data => { 'no-turbolinks' => true }}
 
-	%nav.navbar.tunnel-nav
-		%a.nav-scope.with-font{ href: '/' }
-			SC
-			%span.blue> 0
-			PE
+		%nav.navbar.tunnel-nav
+			%a.nav-scope.with-font{ href: '/' }
+				SC
+				%span.blue> 0
+				PE
 
-	= yield
+		= yield
+
+		.finder-progression
+			.progress-percent.blue.with-font
+				%span.num
+					= @percent
+				\%
+			.progress-bar
+
+	:javascript
+		$(document).on('page:change', function () {
+			var percent = Number($('.progress-percent .num').text());
+			if (percent == '0') percent = 2;
+			$('.finder-progression .progress-bar').css('width', percent+'%');
+			$('.progress-percent').css('left', percent+'%');
+		});

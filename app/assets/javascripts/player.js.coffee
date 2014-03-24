@@ -1,5 +1,6 @@
 window.isFastForwarding = false
 window.isFastRewinding  = false
+window.mediaPlayer = null
 
 window.initializeMediaPlayer = ->
 	window.mediaPlayer = document.getElementById 'player'

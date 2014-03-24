@@ -19,7 +19,7 @@
             CHAPTERS[#{chapter.number}] = #{chapter.timecode};
 
     :javascript
-        window.onload = function () {
+        $(document).on('page:change', function () {
             api.beginConnection(function () {
                 console.log('connected')
                 if (typeof FACEBOOK_ID != 'undefined') {
@@ -36,7 +36,7 @@
                     });
                 }
             });
-        };
+        });
 
         document.addEventListener('DOMContentLoaded', function () {
             initializeMediaPlayer()

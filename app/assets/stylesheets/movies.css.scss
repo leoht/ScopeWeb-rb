@@ -69,6 +69,7 @@ $scope_blue: #04e5e8;
 div.movie-more {
 	padding-top: 0;
 	height: 100%;
+	width: 100%;
 	min-height: 2000px; // dirty, to remove
 	background: #eee;
 
@@ -83,21 +84,29 @@ div.movie-more {
 	}
 
 	.movie-more-head {
-		background: #000;
+		background-color: #131a21;
+		width: 100%;
 		padding-top: 45px;
+		background-image: asset-url('samples/movie-more-visu.png');
+		background-repeat: no-repeat; background-position: center;
 
 		.movie-author, .movie-year { border: none; padding: 0; font-size: 18px; }
 		h1.movie-title { margin: 0; font-size: 60px; }
 
 		.movie-more-nav {
 			width: 600px;
-			height: 70px;
-			margin: 40px auto 0 auto;
+			height: 100px;
+			margin: 30px auto 0 auto;
 
 			div {
 				float: left;
 				width: 200px;
+				padding-top: 45px;
 			}
+
+			.doc { background: asset-url('movie-nav-doc.png') no-repeat center top; }
+			.watch { background: asset-url('movie-nav-watch.png') no-repeat center top; }
+			.social { background: asset-url('movie-nav-social.png') no-repeat center top; }
 
 			.button-link {
 				display: block;
@@ -114,8 +123,9 @@ div.movie-more {
 
 	.movie-more-content {
 		.synopsis {
-			h2 { color: red; font-size: 27px; letter-spacing: 3px;}
-			p { height: 250px; }
+			width: 700px; margin: auto;
+			h2 { padding-top: 10px; color: #f0004e; font-size: 27px; letter-spacing: 3px;}
+			.content { height: 250px; text-transform: none; color: black; line-height: 22px; }
 		}
 
 		.trailer {
@@ -134,7 +144,7 @@ div.movie-more {
 
 .finder {
 	text-align: center;
-	margin-top: 100px;
+	padding-top: 100px;
 
 	h1 {
 		text-transform: uppercase;
@@ -165,3 +175,20 @@ div.movie-more {
 		height: 90%;
 	}
 }
+
+
+.finder-progression {
+	background: asset-url('page-layout-bottom.png') repeat-x left 95%;
+	width: 100%;
+	height: 60px;
+	position: absolute; bottom: 35px; left: 0;
+
+	.progress-percent { font-size: 20px; position: relative; }
+
+	.progress-bar {
+		background: $scope_blue;
+		height: 6px; width: 2%;
+		margin-top: 18px;
+	}
+}
+

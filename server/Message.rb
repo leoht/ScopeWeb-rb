@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 require 'json'
-require_relative 'MessageTypes'
+require_relative 'message_types'
 
 module Scope
 

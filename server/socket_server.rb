@@ -2,9 +2,9 @@
 
 require 'em-websocket'
 require 'json'
-require_relative 'Client'
-require_relative 'Message'
-require_relative 'Association'
+require_relative 'client'
+require_relative 'message'
+require_relative 'association'
 
 module Scope
   class SocketServer

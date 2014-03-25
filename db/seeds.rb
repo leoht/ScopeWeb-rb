@@ -22,7 +22,7 @@ movie.chapters.create(number: 3, title: 'Moloch', timecode: '780')
 
 # SEED NOTICES
 
-movie.notices.create(title: 'Bienvenue', timecode: '7', short_content: 'Ici s\'afficheront les notices documentaires de votre film. Bon visionnage !', content: '')
+movie.notices.create(title: 'Bienvenue', timecode: '1', short_content: 'Ici s\'afficheront les notices documentaires de votre film. Bon visionnage !', content: '')
 
 # IMPACT / CINEMA
 movie.notices.create(title: 'Blade Runner', timecode: '1382', short_content: 'Le commissariat de Blade Runner est la copie conforme (angle de vue compris) d’une des tours de Metropolis.', content: '')

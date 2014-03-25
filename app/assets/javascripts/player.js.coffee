@@ -13,6 +13,7 @@ window.togglePlayPause = ->
 		btn.innerHTML = 'Pause'
 		btn.className = 'pause'
 		window.mediaPlayer.play()
+		$('.navbar').animate { top: '-=70px' }, 400
 
 		window.playingTimer = setInterval ->
 			api.send 'api.playing.current_timecode',
@@ -26,6 +27,7 @@ window.togglePlayPause = ->
 		btn.className = 'play'
 		window.mediaPlayer.pause()
 		clearInterval window.playingTimer
+		$('.navbar').animate { top: '+=70px' }, 400
 
 window.toggleFastForward = ->
 	clearInterval window.fastRewindInterval

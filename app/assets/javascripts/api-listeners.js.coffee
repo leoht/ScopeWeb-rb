@@ -34,3 +34,9 @@ api.on PREV_CHAPTER, (data) ->
 api.on NEXT_CHAPTER, (data) ->
 	window.currentChapter++
 	mediaPlayer.currentTime = CHAPTERS[window.currentChapter]
+
+api.on NOTICE, (data) ->
+	$('.notice-flash').fadeIn 400
+	setTimeout ->
+		$('.notice-flash').fadeOut 400
+	, 3000

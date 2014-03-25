@@ -26,3 +26,43 @@ $(document).ready ->
 		$('.hidden-nav').animate {
 			top: '-=55px'
 		}, 500
+
+	$('#mood-laugh').click ->
+		$(this).animate { opacity: 0}, 400
+		$('#line-laugh').fadeIn 400
+
+	$('#mood-scared').click ->
+		$(this).animate { opacity: 0}, 400
+		$('#line-scared').fadeIn 400
+
+	$('#mood-escape').click ->
+		$(this).animate { opacity: 0}, 400
+		$('#line-escape').fadeIn 400
+
+	$('#mood-action').click ->
+		$(this).animate { opacity: 0}, 400
+		$('#line-action').fadeIn 400
+
+	$('#mood-emotions').click ->
+		$(this).animate { opacity: 0}, 400
+		$('#line-emotions').fadeIn 400
+
+	$('#line-laugh').click ->
+		$(this).fadeOut 400
+		$('#mood-laugh').animate { opacity: 1 }, 400
+
+	$('#line-scared').click ->
+		$(this).fadeOut 400
+		$('#mood-scared').animate { opacity: 1 }, 400
+
+	$('#line-escape').click ->
+		$(this).fadeOut 400
+		$('#mood-escape').animate { opacity: 1 }, 400
+
+	$('#line-action').click ->
+		$(this).fadeOut 400
+		$('#mood-action').animate { opacity: 1 }, 400
+
+	$('#line-emotions').click ->
+		$(this).fadeOut 400
+		$('#mood-emotions').animate { opacity: 1 }, 400

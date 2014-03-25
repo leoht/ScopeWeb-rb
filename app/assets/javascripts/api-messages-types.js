@@ -24,6 +24,8 @@ var DISASSOCIATE = 'api.disassociate';
 
 var PLAYING_AT_TIMECODE = 'api.playing.current_timecode';
 
+var NOTICE = 'api.playing.notice';
+
 var PLAY = 'api.movie.play';
 
 var PAUSE = 'api.movie.pause';

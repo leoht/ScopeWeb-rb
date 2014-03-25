@@ -29,7 +29,13 @@ module Scope
 
      REQUEST_FOR_NOTICE_AT_TIMECODE = 'api.playing.request_notice'
 
+     REQUEST_FOR_COMMENT_AT_TIMECODE = 'api.playing.request_comment'
+
      NOTICE_AT_TIMECODE = 'api.playing.notice'
+
+     COMMENT_AT_TIMECODE = 'api.playing.comment'
+
+     POST_MESSAGE = 'api.social.post'
 
   end
 end

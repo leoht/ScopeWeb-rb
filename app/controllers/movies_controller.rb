@@ -26,6 +26,7 @@ class MoviesController < ApplicationController
 			@percent = 30
 			render 'movies/finder/related_movies', layout: 'tunnel'
 		when '3' then
+			@percent = 70
 			render 'movies/finder/related_facts', layout: 'tunnel'
 		end
 	end

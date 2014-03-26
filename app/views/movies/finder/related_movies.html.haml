@@ -3,11 +3,16 @@
 
 	.related-movies
 		- for i in 1..5
-			.movie{ :class => "movie-#{i}" }
+			.movie{ :id => "movie-#{i}" }
 				.poster
 					%img.poster-img
 		.no
-			non
+
+		.line-no
 
 		.yes
-			oui
+
+		.line-yes
+
+		.next
+		= link_to 'Suivant', find_movies_path(step: 3)

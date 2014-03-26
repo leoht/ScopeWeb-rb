@@ -25,7 +25,8 @@
 			.progress-bar
 
 	:javascript
-		$(document).on('page:change', function () {
+		window.percent = #{@percent} ;
+		$(function () {
 			var percent = Number($('.progress-percent .num').text());
 			if (percent == '0') percent = 2;
 			$('.finder-progression .progress-bar').css('width', percent+'%');

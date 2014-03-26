@@ -27,6 +27,13 @@ $(document).ready ->
 			top: '-=55px'
 		}, 500
 
+	$('.mood-buttons .button-link').click ->
+		percent = Number window.percent + 5
+		$('.finder-progression .progress-bar').css 'width', percent+'%'
+		$('.progress-percent').css 'left', percent+'%'
+		$('.progress-percent .num').text percent
+		window.percent = percent
+
 	$('#mood-laugh').click ->
 		$(this).animate { opacity: 0}, 400
 		$('#line-laugh').fadeIn 400

@@ -1,0 +1,11 @@
+.finder.finder-movies
+	%h1.finder-title.with-font Êtes vous intéréssé par...
+
+	.related-facts
+		- for i in 1..5
+			.fact{ :id => "fact-#{i}" }
+				.fact-image
+					%img
+		.no
+
+		.yes

@@ -201,6 +201,23 @@ div.movie-more {
 			margin-right: 30px;
 		}
 	}
+
+
+	.related-movies, .related-facts {
+		.movie {
+			background-color: #aaa;
+			width: 380px; 
+			margin: auto;
+		}
+
+		.yes, .no { cursor: pointer; position: absolute; top: 380px; width: 70px; height: 70px; }
+		.yes { right: 18%; background: asset-url('finder-yes.png') no-repeat right center; }
+		.no { left: 18%; background: asset-url('finder-no.png') no-repeat left center; }
+
+		.line-yes { position: absolute; right: 0px; top: 415px; height: 1px; width: 18%; background: $scope_blue; }
+		.line-no { position: absolute; left: 0px; top: 415px; height: 1px; width: 18%; background: $scope_blue; }
+
+	}
 }
 
 .player-wrapper {

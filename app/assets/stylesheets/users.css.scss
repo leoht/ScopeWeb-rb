@@ -1,3 +1,19 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$scope_blue: #04e5e8;
+
+.user {
+	margin: 100px auto 0 auto;
+	width: 700px;
+
+	.user-profile-title { color: white; }
+	.profile-picture { float: right; border: 1px solid $scope_blue; }
+
+	.user-movie {
+		padding-left: 20px; 
+
+		a { color: white; text-transform: uppercase; }
+	}
+}

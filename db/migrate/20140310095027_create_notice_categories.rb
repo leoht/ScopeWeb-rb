@@ -3,6 +3,7 @@ class CreateNoticeCategories < ActiveRecord::Migration
     create_table :notice_categories do |t|
       t.string :title
       t.string :nicename
+      t.integer :parent_id
 
       t.timestamps
     end

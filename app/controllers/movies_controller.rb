@@ -33,6 +33,13 @@ class MoviesController < ApplicationController
 
 	# The movie player
 	def watch
+		# update viewed movies if user logged in
+		if current_user
+			@user = current_user
+			if not @user.movies.exists? @movie
+				@user.movies << @movie
+			end
+		end
 	end
 
 	def more

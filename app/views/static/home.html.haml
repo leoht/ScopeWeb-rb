@@ -1,16 +1,26 @@
 .container.home
 	%h1.home-title.with-font
-		SC
-		%span.blue> 0
-		PE
+		%a{ href: root_path }
+			SC
+			%span.blue> 0
+			PE
 
 	%h3.home-subtitle L'oeil ouvert sur le monde
 
 	.home-actions
-		%a{ href: '/auth/facebook', id: 'sign_in', class: 'blue' }
-			%img{ src: image_path('/assets/profile.png') }
-			%br
-			Inscription rapide
+		- if not current_user
+			%a{ href: '/auth/facebook', id: 'sign_in', class: 'blue' }
+				%img{ src: image_path('/assets/profile.png') }
+				%br
+				Inscription rapide avec Facebook
+		- else
+			%img{ src: image_path('/assets/profile-picture-mask.png'), style: "background-image: url(http://graph.facebook.com/#{current_user.uid}/picture?type=normal); background-position: center;" }
+			
+			%span.home-username
+				%a{ href: my_profile_path }
+					= current_user.name
+			%a{ href: signout_path, id: 'sign_out', class: 'blue' }
+				Déconnexion
 
 	.home-actions
 		= link_to 'On vous trouve un film', :find_movies, class: 'button-link'

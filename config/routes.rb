@@ -1,7 +1,5 @@
 Scope::Application.routes.draw do
-  
-  get "users/register"
-  get "users/show"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -12,7 +10,8 @@ Scope::Application.routes.draw do
   get 'auth/:provider(/callback)', to: 'sessions#create', as: 'login', defaults: { :provider => 'facebook' }
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
-
+  get 'me', to: 'users#me', as: 'my_profile'
+  resources :users, only: [:show]
   get 'register', to: 'users#register', as: 'register'
 
   resources :sessions, only: [:create, :destroy]

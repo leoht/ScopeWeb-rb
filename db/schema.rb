@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140311153032) do
+ActiveRecord::Schema.define(version: 20140326093158) do
 
   create_table "comments", force: true do |t|
     t.text     "content"
@@ -70,9 +70,18 @@ ActiveRecord::Schema.define(version: 20140311153032) do
   add_index "movies_tags", ["movie_id", "tag_id"], name: "index_movies_tags_on_movie_id_and_tag_id"
   add_index "movies_tags", ["tag_id", "movie_id"], name: "index_movies_tags_on_tag_id_and_movie_id"
 
+  create_table "movies_users", id: false, force: true do |t|
+    t.integer "movie_id", null: false
+    t.integer "user_id",  null: false
+  end
+
+  add_index "movies_users", ["movie_id", "user_id"], name: "index_movies_users_on_movie_id_and_user_id"
+  add_index "movies_users", ["user_id", "movie_id"], name: "index_movies_users_on_user_id_and_movie_id"
+
   create_table "notice_categories", force: true do |t|
     t.string   "title"
     t.string   "nicename"
+    t.integer  "parent_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -101,6 +110,14 @@ ActiveRecord::Schema.define(version: 20140311153032) do
 
   add_index "notices_tags", ["notice_id", "tag_id"], name: "index_notices_tags_on_notice_id_and_tag_id"
   add_index "notices_tags", ["tag_id", "notice_id"], name: "index_notices_tags_on_tag_id_and_notice_id"
+
+  create_table "notices_users", id: false, force: true do |t|
+    t.integer "notice_id", null: false
+    t.integer "user_id",   null: false
+  end
+
+  add_index "notices_users", ["notice_id", "user_id"], name: "index_notices_users_on_notice_id_and_user_id"
+  add_index "notices_users", ["user_id", "notice_id"], name: "index_notices_users_on_user_id_and_notice_id"
 
   create_table "related_movies", force: true do |t|
     t.string   "title"

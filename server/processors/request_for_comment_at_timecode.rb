@@ -11,7 +11,7 @@ module Scope
           answer.direction = MessageTypes::BROADCAST
           answer.name = MessageTypes::COMMENT_AT_TIMECODE
 
-          answer.data = { :id => comment.id, :comment => comment.content }
+          answer.data = { :id => comment.id, :comment => comment.content, :author => comment.user.name, :timecode => comment.timecode }
           puts " [x] Sending comment for timecode : " + message.get('timecode').to_s
         end
 

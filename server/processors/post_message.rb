@@ -10,6 +10,10 @@ module Scope
   	  	comment.movie_id = message.get 'movie_id'
   	  	comment.save
 
+  	  	user = User.find_by_uid message.get('facebook_id')
+  	  	user.comments << comment
+  	  	user.save
+
   	  	answer = Message.new
   	  	answer.direction = MessageTypes::BROADCAST
   	  	answer.name = 'api.social.posted'

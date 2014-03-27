@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20140326093158) do
     t.text     "content"
     t.string   "timecode"
     t.datetime "created_at"
+    t.integer  "user_id"
     t.datetime "updated_at"
     t.integer  "movie_id"
   end

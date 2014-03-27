@@ -21,6 +21,8 @@ window.togglePlayPause = ->
 					'timecode': Math.floor window.mediaPlayer.currentTime
 				}
 		, 1000
+
+		api.send 'api.movie.play'
 	else
 		btn.title = 'Play'
 		btn.innerHTML = 'Play'
@@ -28,6 +30,7 @@ window.togglePlayPause = ->
 		window.mediaPlayer.pause()
 		clearInterval window.playingTimer
 		$('.navbar').animate { top: '+=70px' }, 400
+		api.send 'api.movie.pause'
 
 window.toggleFastForward = ->
 	clearInterval window.fastRewindInterval

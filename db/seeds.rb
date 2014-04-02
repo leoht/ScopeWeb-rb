@@ -17,6 +17,11 @@ movie.year = 1929
 movie.file = 'metropolis.mp4'
 movie.save
 
+# Related movies
+
+RelatedMovie.create(title: 'Inglorious Basterds', image: 'poster-inglorious.jpg', year: '2011')
+RelatedMovie.create(title: 'Le Cinquième Element', image: 'poster-5e-element.jpg', year: '1997')
+
 # movie.chapters.create(number: 1, title: 'Enfer et Paradis', timecode: '60')
 # movie.chapters.create(number: 2, title: 'La Révélation', timecode: '572')
 # movie.chapters.create(number: 3, title: 'Moloch', timecode: '780')

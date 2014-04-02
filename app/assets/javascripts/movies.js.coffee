@@ -3,9 +3,46 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 window.isMenuDisplayed = false
+window.relatedMovieCounter = 0;
 
 $(document).ready ->
-	$('.discover-more a').click ->
+	
+	window.finderPushMovie = () ->
+		data = MOVIES[window.relatedMovieCounter]
+
+		ball = $('<div>')
+		ball.addClass 'line-ball'
+		ball.css 'right', (window.relatedMovieCounter/10 * 5)+'%'
+		$('.related-movies').append ball
+		ball.animate {
+			right: '+=18%',
+			opacity: 0
+		}, 1000
+
+		window.relatedMovieCounter++
+
+		$('.poster-img').attr 'src', '/assets/samples/' + data.image
+
+	window.finderShiftMovie = (data) ->
+		ball = $('<div>')
+		ball.addClass 'line-ball'
+		ball.css 'left', '20%'
+		ball.css 'opacity', 0
+		$('.related-movies').append ball
+		ball.animate {
+			left: '-='+(-window.relatedMovieCounter * 1.5 + 18)+'%',
+			opacity: 1
+		}, 1000
+
+		percent = Number window.percent + 5
+		$('.finder-progression .progress-bar').css 'width', percent+'%'
+		$('.progress-percent').css 'left', percent+'%'
+		$('.progress-percent .num').text percent
+		window.percent = percent
+
+
+	if MOVIES
+		finderPushMovie()
 
 	$('.synopsis').waypoint ->
 		if window.isMenuDisplayed

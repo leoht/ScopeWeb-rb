@@ -164,7 +164,7 @@ div.movie-more {
 
 		text-align: center;
 		width: 800px;
-		margin: auto;
+		margin: 25% auto 0 auto;
 
 		.button-link {
 			cursor: pointer;
@@ -205,18 +205,35 @@ div.movie-more {
 
 	.related-movies, .related-facts {
 		.movie {
-			background-color: #aaa;
-			width: 380px; 
+
+			width: 354px;
+			height: 482px;
 			margin: auto;
+			padding: 0;
 		}
 
-		.yes, .no { cursor: pointer; position: absolute; top: 380px; width: 70px; height: 70px; }
+		.line-ball {
+			width: 12px; height: 12px; background: asset-url('finder-line-ball.png') no-repeat center center; position: absolute; top: calc(50% - 6px); 
+		}
+
+		#movie-1 { display: block; }
+
+		.yes, .no { cursor: pointer; position: absolute; top: calc(50% - 35px); width: 70px; height: 70px; }
 		.yes { right: 18%; background: asset-url('finder-yes.png') no-repeat right center; }
 		.no { left: 18%; background: asset-url('finder-no.png') no-repeat left center; }
 
-		.line-yes { position: absolute; right: 0px; top: 415px; height: 1px; width: 18%; background: $scope_blue; }
-		.line-no { position: absolute; left: 0px; top: 415px; height: 1px; width: 18%; background: $scope_blue; }
+		.line-yes { position: absolute; right: 0px; top: 50%; height: 1px; width: 18%; background: $scope_blue; }
+		.line-no { position: absolute; left: 0px; top: 50%; height: 1px; width: 18%; background: $scope_blue; }
 
+		.not-seen { display: block; cursor: pointer; margin-top: 30px; text-transform: uppercase; color: $scope_blue; font-size: 20px; font-weight: bold; }
+
+	}
+
+	.next a {
+		position: absolute; top: calc(50% - 30px); right: 30px;
+		width: 62px; height: 85px;
+		display: block;
+		background: asset-url('finder-next.png') no-repeat center center;
 	}
 }
 

@@ -2,17 +2,28 @@
 	%h1.finder-title.with-font Avez-vous aimé...
 
 	.related-movies
-		- for i in 1..5
-			.movie{ :id => "movie-#{i}" }
-				.poster
-					%img.poster-img
-		.no
+		.movie
+			.poster
+				%img.poster-img{ src: '' }
+		.no{ onclick: 'finderShiftMovie(); finderPushMovie();'}
 
 		.line-no
 
-		.yes
+		.yes{ onclick: 'finderShiftMovie(); finderPushMovie();'}
 
 		.line-yes
 
-		.next
-		= link_to 'Suivant', find_movies_path(step: 3)
+		/.line-ball
+
+		%a.not-seen Je ne l'ai pas vu
+
+		/.next
+		/	= link_to '', find_movies_path(step: 3)
+
+
+%script
+	var MOVIES = [];
+	var data = [];
+	- for movie in @related_movies
+		data = { id: "#{movie.id}", image: "#{movie.image}" };
+		MOVIES.push(data);

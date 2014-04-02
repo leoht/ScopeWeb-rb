@@ -24,6 +24,7 @@ class MoviesController < ApplicationController
 			render 'movies/finder/mood', layout: 'tunnel'
 		when '2' then
 			@percent = 30
+			@related_movies = RelatedMovie.all.limit 5
 			render 'movies/finder/related_movies', layout: 'tunnel'
 		when '3' then
 			@percent = 70

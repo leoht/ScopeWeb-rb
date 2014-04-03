@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :comments, inverse_of: :user
   has_and_belongs_to_many :notices
   has_and_belongs_to_many :movies
+  has_and_belongs_to_many :friends, class_name: 'User', join_table: :friendships, foreign_key: :user_id, association_foreign_key: :friend_id
   
   def self.from_omniauth(auth)
   	where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|

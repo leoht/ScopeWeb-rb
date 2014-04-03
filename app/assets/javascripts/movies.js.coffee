@@ -41,7 +41,7 @@ $(document).ready ->
 		window.percent = percent
 
 
-	if MOVIES
+	if typeof(MOVIES) != 'undefined'
 		finderPushMovie()
 
 	$('.synopsis').waypoint ->

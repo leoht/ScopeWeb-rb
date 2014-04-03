@@ -15,7 +15,7 @@
 
 		/.line-ball
 
-		%a.not-seen Je ne l'ai pas vu
+		%a.not-seen{ onclick: 'finderShiftMovie(); finderPushMovie();'} Je ne l'ai pas vu
 
 		/.next
 		/	= link_to '', find_movies_path(step: 3)

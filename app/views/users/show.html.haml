@@ -1,19 +1,19 @@
 .user
-	.profile-picture
-		%img{ src: "http://graph.facebook.com/#{@user.uid}/picture?type=large" }
-	%h1.user-profile-title
-		= @user.name
+	-# .profile-picture
+	-# 	%img{ src: "http://graph.facebook.com/#{@user.uid}/picture?type=large" }
+	-# %h1.user-profile-title
+	-# 	= @user.name
 
-	Inscrit depuis le #{DateTime.parse(@user.created_at.to_s).strftime('%d/%m/%Y')}
+	-# Inscrit depuis le #{DateTime.parse(@user.created_at.to_s).strftime('%d/%m/%Y')}
 
-	%h2
-		- if current_user and current_user.id == @user.id
-			Films que vous avez vu
-		- else
-			Films que #{@user.name} a vu
+	-# %h2
+	-# 	- if current_user and current_user.id == @user.id
+	-# 		Films que vous avez vu
+	-# 	- else
+	-# 		Films que #{@user.name} a vu
 
-	- for movie in @user.movies
-		.user-movie
-			%a{ href: more_movie_path(movie) }
-				#{movie.title}
-			de #{movie.author}
+	-# - for movie in @user.movies
+	-# 	.user-movie
+	-# 		%a{ href: more_movie_path(movie) }
+	-# 			#{movie.title}
+	-# 		de #{movie.author}

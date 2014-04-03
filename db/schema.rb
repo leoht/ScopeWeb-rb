@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140326093158) do
+ActiveRecord::Schema.define(version: 20140403131348) do
 
   create_table "comments", force: true do |t|
     t.text     "content"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 20140326093158) do
     t.datetime "updated_at"
     t.integer  "movie_id"
   end
+
+  create_table "friendships", id: false, force: true do |t|
+    t.integer "user_id"
+    t.integer "friend_id"
+  end
+
+  add_index "friendships", ["friend_id", "user_id"], name: "index_friendships_on_friend_id_and_user_id", unique: true
+  add_index "friendships", ["user_id", "friend_id"], name: "index_friendships_on_user_id_and_friend_id", unique: true
 
   create_table "movie_chapters", force: true do |t|
     t.integer  "number"

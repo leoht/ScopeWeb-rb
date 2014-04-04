@@ -51,18 +51,18 @@ others_category  = NoticeCategory.create(title: 'Autres', nicename: 'themes_othe
 movie.notices.create(title: 'Bienvenue', timecode: '1', short_content: 'Ici s\'afficheront les notices documentaires de votre film. Bon visionnage !', content: '')
 
 # IMPACT / CINEMA
-movie.notices.create(title: 'Blade Runner', timecode: '1382', short_content: 'Le commissariat de Blade Runner est la copie conforme (angle de vue compris) d’une des tours de Metropolis.', content: '')
-movie.notices.create(title: 'Star Wars', timecode: '2400', short_content: 'Le design de C-3PO dans Star Wars possède une troublante ressemblance avec l’androïde.', content: '')
-movie.notices.create(title: 'Frankenstein', timecode: '4604', short_content: 'Le laboratoire de Frankenstein est inspiré de celui de Rotwang.', content: '')
-movie.notices.create(title: 'Cinquième Element', timecode: '4704', short_content: 'Le laboratoire du Cinquième Element est inspiré de celui de Rotwang.', content: '')
-movie.notices.create(title: 'Igor', timecode: '4804', short_content: 'Pour les décors d’Igor (2007), le réalisateur Anthony Leondis déclare avoir été influencé par l’expressionnisme allemand, notamment Metropolis de Fritz Lang, ainsi que par l’univers du Frankenstein de James Whale.', content: '')
+movie.notices.create(title: 'Blade Runner', timecode: '1382', short_content: 'Le commissariat de Blade Runner est la copie conforme (angle de vue compris) d’une des tours de Metropolis.', content: '', category: cinema_category)
+movie.notices.create(title: 'Star Wars', timecode: '2400', short_content: 'Le design de C-3PO dans Star Wars possède une troublante ressemblance avec l’androïde.', content: '', category: cinema_category)
+movie.notices.create(title: 'Frankenstein', timecode: '4604', short_content: 'Le laboratoire de Frankenstein est inspiré de celui de Rotwang.', content: '', category: cinema_category)
+movie.notices.create(title: 'Cinquième Element', timecode: '4704', short_content: 'Le laboratoire du Cinquième Element est inspiré de celui de Rotwang.', content: '', category: cinema_category)
+movie.notices.create(title: 'Igor', timecode: '4804', short_content: 'Pour les décors d’Igor (2007), le réalisateur Anthony Leondis déclare avoir été influencé par l’expressionnisme allemand, notamment Metropolis de Fritz Lang, ainsi que par l’univers du Frankenstein de James Whale.', content: '', category: cinema_category)
 
 # IMPACT / MUSIQUE
-movie.notices.create(title: 'Express Yourself - Madonna', timecode: '240', short_content: 'Le vidéo-clip Express Yourself de Madonna réalisé par David Fincher en 1989 reprend l’intrigue du film ainsi que certains décors (la ville haute, la ville basse, la machine actionnée par les ouvriers...).', content: '')
-movie.notices.create(title: 'The Wall - Pink Floyd', timecode: '2400', short_content: 'On reconnaîtra les ouvriers qui descendent vers les machines dans les écoliers à la chaîne de Pink Floyd The Wall.', content: '')
-movie.notices.create(title: 'Radio Gaga - Queen', timecode: '4604', short_content: 'Le clip musical Radio Gaga de Queen reprend les scènes de Metropolis.', content: '')
-movie.notices.create(title: 'Invincible - Muse', timecode: '1070', short_content: 'Le clip de la chanson Invincible du groupe Muse, sortie en 2006 sur l’album Black Holes and Revelations représente une ville très ressemblante à celle de Metropolis. Ce clip traite de la destruction du monde et le retour à l’âge de pierre, ce qui n’est pas sans rappeler un des thèmes du film.', content: '')
-movie.notices.create(title: 'Alejandro - Lady Gaga', timecode: '5777', short_content: 'Lady Gaga reprend des thèmes de Metropolis dans Alejandro et Paparazzi. En fausse Maria, l’artiste se représente comme l’être démon qui exalte les foules', content: '')
+movie.notices.create(title: 'Express Yourself - Madonna', timecode: '240', short_content: 'Le vidéo-clip Express Yourself de Madonna réalisé par David Fincher en 1989 reprend l’intrigue du film ainsi que certains décors (la ville haute, la ville basse, la machine actionnée par les ouvriers...).', content: '', category: music_category)
+movie.notices.create(title: 'The Wall - Pink Floyd', timecode: '2400', short_content: 'On reconnaîtra les ouvriers qui descendent vers les machines dans les écoliers à la chaîne de Pink Floyd The Wall.', content: '', category: music_category)
+movie.notices.create(title: 'Radio Gaga - Queen', timecode: '4604', short_content: 'Le clip musical Radio Gaga de Queen reprend les scènes de Metropolis.', content: '', category: music_category)
+movie.notices.create(title: 'Invincible - Muse', timecode: '1070', short_content: 'Le clip de la chanson Invincible du groupe Muse, sortie en 2006 sur l’album Black Holes and Revelations représente une ville très ressemblante à celle de Metropolis. Ce clip traite de la destruction du monde et le retour à l’âge de pierre, ce qui n’est pas sans rappeler un des thèmes du film.', content: '', category: music_category)
+movie.notices.create(title: 'Alejandro - Lady Gaga', timecode: '5777', short_content: 'Lady Gaga reprend des thèmes de Metropolis dans Alejandro et Paparazzi. En fausse Maria, l’artiste se représente comme l’être démon qui exalte les foules', content: '', category: music_category)
 
 # IMPACT / JEUX VIDEOS
 movie.notices.create(title: 'BioShock', timecode: '6863', short_content: 'Les développeurs de BioShock, jeu vidéo plébiscité par la critique, se sont fortement inspirés de l’oeuvre de Lang pour créer leur ville sousmarine, Rapture.', content: '', category: games_category)

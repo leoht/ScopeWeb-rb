@@ -1,5 +1,7 @@
 Scope::Application.routes.draw do
 
+  get "notice_categories/index"
+  get "notice_categories/show"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -26,6 +28,12 @@ Scope::Application.routes.draw do
 
     resources :notices, shallow: true do
       get 'share',  on: :member
+    end
+
+    resources :notice_categories do
+      resources :notices do
+        get 'share', on: :member
+      end
     end
 
     resources :comments, shallow: true do

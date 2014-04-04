@@ -109,7 +109,7 @@ ActiveRecord::Schema.define(version: 20140403131348) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "movie_id"
-    t.integer  "category_id"
+    t.integer  "notice_category_id"
   end
 
   create_table "notices_tags", id: false, force: true do |t|

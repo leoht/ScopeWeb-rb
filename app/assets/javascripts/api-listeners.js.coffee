@@ -36,7 +36,13 @@ api.on NEXT_CHAPTER, (data) ->
 	mediaPlayer.currentTime = CHAPTERS[window.currentChapter]
 
 api.on NOTICE, (data) ->
-	$('.notice-flash').fadeIn 400
+	$('.notice-flash-'+data.category_nicename).fadeIn 400
+	setTimeout ->
+		$('.notice-flash').fadeOut 400
+	, 3000
+
+api.on COMMENT, (data) ->
+	$('.notice-flash-comment').fadeIn 400
 	setTimeout ->
 		$('.notice-flash').fadeOut 400
 	, 3000

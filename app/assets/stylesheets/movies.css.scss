@@ -266,9 +266,15 @@ div.movie-more {
 
 .notice-flash {
 	position: absolute; top: 20px; right: 20px; z-index: 255;
-	width: 20px; height: 20px; background-color: #eb0550; border-radius: 15px;
+	width: 40px; height: 40px; 
 	display: none;
 }
+
+.notice-flash-impact { background: asset-url('notif-picto-impact.png') no-repeat center; }
+.notice-flash-analyse { background: asset-url('notif-picto-analyse.png') no-repeat center; }
+.notice-flash-themes { background: asset-url('notif-picto-themes.png') no-repeat center; }
+.notice-flash-anecdotes { background: asset-url('notif-picto-anecdotes.png') no-repeat center; }
+.notice-flash-comment { background: asset-url('notif-picto-comment.png') no-repeat center; }
 
 
 .finder-progression {

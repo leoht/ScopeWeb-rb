@@ -57,7 +57,7 @@ others_category  = NoticeCategory.create(title: 'Autres', nicename: 'themes_othe
 
 # SEED NOTICES
 
-movie.notices.create(title: 'Bienvenue', timecode: '1', short_content: 'Ici s\'afficheront les notices documentaires de votre film. Bon visionnage !', content: '', category: cinema_category)
+movie.notices.create(title: 'Bienvenue', timecode: '1', short_content: 'Ici s\'afficheront les notices documentaires de votre film. Vous pouvez défiler sur la ligne temporelle pour retrouver celles que vous avez déjà vues ou ratées. Rendez-vous à la fin du film, bon visionnage !', content: '', category: cinema_category)
 
 # IMPACT / CINEMA
 movie.notices.create(title: 'Blade Runner', timecode: '1382', short_content: 'Le commissariat de Blade Runner est la copie conforme (angle de vue compris) d’une des tours de Metropolis.', content: '', category: cinema_category)

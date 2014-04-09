@@ -10,10 +10,8 @@ module Scope
           answer = Message.new
           answer.direction = MessageTypes::BROADCAST
           answer.name = MessageTypes::NOTICE_AT_TIMECODE
-
-          category = NoticeCategory.find notice.notice_category_id
-
-          answer.data = { :timecode => message.get('timecode').to_s, :id => notice.id.to_s, :title => notice.title, :short_content => notice.short_content, :color => category.color, :category_nicename => category.parent.nicename }
+          # message.data = { :id => notice.id, :title => notice.title, :content => notice.content, :timecode => notice.timecode, :short_content => notice.short_content, :image => notice.image, :category => notice.parent.title, :category_nicename => notice.parent.nicename }
+          answer.data = { :timecode => message.get('timecode').to_s, :id => notice.id.to_s, :title => notice.title, :short_content => notice.short_content, :category_nicename => 'impact' }
           puts " [x] Sending notice for timecode : " + message.get('timecode').to_s
           puts answer.data.inspect
         end

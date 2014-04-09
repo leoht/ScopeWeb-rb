@@ -1,31 +1,11 @@
 .finder.finder-movies
-	%h1.finder-title.with-font Ce fait historique vous intéresse ?
+	%h1.finder-title.with-font Êtes vous intéréssé par...
 
 	.related-facts
-		.fact
-			.image
-				%img.poster-img.fact-img{ src: '' }
-			.fact-title.with-font
-			%p.fact-text
+		- for i in 1..5
+			.fact{ :id => "fact-#{i}" }
+				.fact-image
+					%img
+		.no
 
-		.no{ onclick: 'finderShiftFact(); finderPushFact();'}
-
-		.line-no
-
-		.yes{ onclick: 'finderShiftFact(); finderPushFact();'}
-
-		.line-yes
-
-		/.line-ball
-
-		/.next
-		/	= link_to '', find_movies_path(step: 4)
-
-
-%script
-	var FACTS = [];
-	var data = [];
-	var NEXT_URL = "#{find_movies_path(step: 4)}";
-	- for fact in @related_facts
-		data = { id: "#{fact.id}", image: "#{fact.photo}", title: "#{fact.title}", text: "#{fact.content}"};
-		FACTS.push(data);
+		.yes

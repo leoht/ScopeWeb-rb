@@ -4,7 +4,6 @@
 
 window.isMenuDisplayed = false
 window.relatedMovieCounter = 0;
-window.relatedFactCounter = 0;
 
 $(document).ready ->
 	
@@ -41,52 +40,9 @@ $(document).ready ->
 		$('.progress-percent .num').text percent
 		window.percent = percent
 
-		if window.relatedMovieCounter == 4
-			document.location.href = NEXT_URL
-
-
-	window.finderPushFact = () ->
-		data = FACTS[window.relatedFactCounter]
-
-		ball = $('<div>')
-		ball.addClass 'line-ball'
-		ball.css 'right', (window.relatedFactCounter/10 * 5)+'%'
-		$('.related-facts').append ball
-		ball.animate {
-			right: '+=18%',
-			opacity: 0
-		}, 1000
-
-		window.relatedFactCounter++
-
-		$('.fact-img').attr 'src', '/assets/samples/' + data.image
-		$('.fact-title').text data.title
-		$('.fact-text').text data.text
-
-	window.finderShiftFact = (data) ->
-		ball = $('<div>')
-		ball.addClass 'line-ball'
-		ball.css 'left', '20%'
-		ball.css 'opacity', 0
-		$('.related-facts').append ball
-		ball.animate {
-			left: '-='+(-window.relatedFactCounter * 1.5 + 18)+'%',
-			opacity: 1
-		}, 1000
-
-		percent = Number window.percent + 5
-		$('.finder-progression .progress-bar').css 'width', percent+'%'
-		$('.progress-percent').css 'left', percent+'%'
-		$('.progress-percent .num').text percent
-		window.percent = percent
-
-		if window.relatedFactCounter == 4
-			document.location.href = NEXT_URL
 
 	if typeof(MOVIES) != 'undefined'
 		finderPushMovie()
-	if typeof(FACTS) != 'undefined'
-		finderPushFact()
 
 	$('.synopsis').waypoint ->
 		if window.isMenuDisplayed

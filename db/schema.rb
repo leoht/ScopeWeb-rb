@@ -91,8 +91,6 @@ ActiveRecord::Schema.define(version: 20140403131348) do
     t.string   "title"
     t.string   "nicename"
     t.integer  "parent_id"
-    t.string   "color"
-    t.string   "background_color"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

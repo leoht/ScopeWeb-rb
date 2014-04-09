@@ -24,7 +24,6 @@
 %script
 	var MOVIES = [];
 	var data = [];
-	var NEXT_URL = "#{find_movies_path(step: 3)}";
 	- for movie in @related_movies
 		data = { id: "#{movie.id}", image: "#{movie.image}" };
 		MOVIES.push(data);

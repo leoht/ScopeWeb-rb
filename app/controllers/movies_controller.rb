@@ -28,10 +28,7 @@ class MoviesController < ApplicationController
 			render 'movies/finder/related_movies', layout: 'tunnel'
 		when '3' then
 			@percent = 70
-			@related_facts = MovieRelatedFact.all.limit 5
 			render 'movies/finder/related_facts', layout: 'tunnel'
-		when '4' then
-			redirect_to movie_path(Movie.take)
 		end
 	end
 

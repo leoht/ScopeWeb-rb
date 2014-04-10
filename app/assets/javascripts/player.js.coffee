@@ -44,6 +44,8 @@ window.toggleFastForward = ->
 	else
 		clearInterval window.fastForwardInterval
 
+	api.send 'api.movie.toggle_forward'
+
 	window.isFastForwarding = ! window.isFastForwarding
 
 
@@ -58,5 +60,7 @@ window.toggleFastRewind = ->
 
 	else
 		clearInterval window.fastRewindInterval
+
+	api.send 'api.movie.toggle_rewind'
 
 	window.isFastRewinding = ! window.isFastRewinding

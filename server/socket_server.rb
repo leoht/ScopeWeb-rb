@@ -84,7 +84,7 @@ module Scope
 
           if association.complete_with_message(from, message)
             register_association association
-            @ongoing_associations.delete association
+            @ongoing_associations.delete identifier
           else
             from.send(JSON.generate({
               :direction => MessageTypes::FROM_PLAYER_TO_DEVICE,

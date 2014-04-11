@@ -9,11 +9,28 @@
 
 	%body.with-layout{ :data => { 'no-turbolinks' => true }}
 
-		%nav.navbar.tunnel-nav
-			%a.nav-scope.with-font{ href: '/' }
+		%nav.navbar
+			%a{ href: "/", class: "nav-scope with-font"}
 				SC
 				%span.blue> 0
 				PE
+
+			= link_to 'Les films', :movies
+
+			= link_to 'On trouve pour vous', :find_movies
+
+			= link_to "L'Application", nil
+
+			.nav-search
+				%form.search-form{ action: search_movies_path, method: :get }
+					%input{ type: :text, name: :s, placeholder: 'Rechercher un film' }
+			
+			.nav-right
+				- if current_user
+					= link_to 'Déconnexion', signout_path, id: 'sign_out'
+				- else
+					= link_to 'Inscription', login_path, id: 'sign_in'
+
 
 		= yield
 

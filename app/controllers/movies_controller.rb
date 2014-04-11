@@ -7,7 +7,6 @@ class MoviesController < ApplicationController
 	end
 
 	def show
-		render 'movies/show', layout: 'full'
 	end
 
 	# Find a movie based on user tastes, etc...

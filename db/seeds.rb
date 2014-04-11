@@ -36,7 +36,7 @@ movie.related_facts <<  MovieRelatedFact.create(title: 'Google mise sur ses robo
 # movie.chapters.create(number: 3, title: 'Moloch', timecode: '780')
 
 # SEED NOTICES CATEGORIES FIRST LEVEL
-impact_category = NoticeCategory.create(title: 'Impact sur la culture populaire', nicename: 'impact', color: 'FFCA9D')
+impact_category = NoticeCategory.create(title: 'Impact sur la culture populaire', nicename: 'impact', color: 'FF7C00')
 themes_category = NoticeCategory.create(title: 'Thèmes clés', nicename: 'themes', color: 'e4a100')
 anecdotes_category = NoticeCategory.create(title: 'Anecdotes', nicename: 'anecdotes', color: '22FF9D')
 analyses_category = NoticeCategory.create(title: 'Analyses', nicename: 'analyses', color: 'f0004e')
@@ -79,6 +79,10 @@ movie.notices.create(title: 'Final Fantasy 7', timecode: '364', short_content: '
 movie.notices.create(title: 'Final Fantasy XII', timecode: '570', short_content: 'Final Fantasy XII également, en accentuant la perspective d’inégalité sociale. Archadès donne un contraste plus frappant.', content: '', category: games_category)
 movie.notices.create(title: 'Ratchet et Clank', timecode: '600', short_content: 'Le jeu se déroule dans une ville également appelée Métropolis, qui possède de nombreuses similitudes avec la ville imaginé par Fridtz Land.', content: '', category: games_category)
 
+# THEMES / DESHUMANISATION
+movie.notices.create(title: 'Mis au Pas', timecode: '260', short_content: 'Ces travailleurs apparaissent comme «mis au pas», privés de liberté et de libre arbitre, épuisés par un labeur exténuant.', content: 'Ces travailleurs apparaissent comme «mis au pas», privés de liberté et de libre arbitre, épuisés par un labeur exténuant. Leur démarche mécanique évoque le monde dans lequel ils vivent et auquel ils ressemblent : ce sont de véritables « hommes machines », de vrais robots.', category: deshumanisation_category)
+movie.notices.create(title: 'Âme et singularité dévorées', timecode: '805', short_content: 'L’usine elle-même, telle Chronos dévorant ses enfants, se nourrit de chair humaine. Lorsqu’ils ne périssent pas physiquement, les ouvriers sont tout simplement anéantis dans leur âme et leur singularité.', content: 'L’usine elle-même, telle Chronos dévorant ses enfants, se nourrit de chair humaine. Lorsqu’ils ne périssent pas physiquement, les ouvriers sont tout simplement anéantis dans leur âme et leur singularité.', category: deshumanisation_category)
+
 # ANALYSES / SYMBOLIQUE
 movie.notices.create(title: 'Hel', timecode: '2220', short_content: 'Hel porte le nom de la divinité germanique des enfers. Hel est une morte absente mais qui pèse sur Jo Fredersen, son fils Freder et son ancien amant', content: '', category: symbolic_category)
 movie.notices.create(title: 'Moloch', timecode: '888', short_content: 'La vision de Moloch (divinité démoniaque) dévorant les hommes.', content: '', category: symbolic_category)
@@ -91,8 +95,6 @@ movie.notices.create(title: 'Le contrôle des lumières', timecode: '3705', shor
 movie.notices.create(title: 'Un sentiment d’immensité', timecode: '6856', short_content: 'Les champs très larges sont utilisés pour les vues de la ville. En optant pour ce type de champs, il donne au spectateur une impression d’immensité, de liberté et surtout d’espace sans limite. On le voit grâce à la luminosité des projecteurs de la ville, qui dirigent notre vision dans tous les sens.', content: '', category: technical_category)
 movie.notices.create(title: 'L’effet Schufftan', timecode: '320', short_content: 'Lang réalise des miniatures de la ville, un appareil photo sur une balançoire et utilise plus particulièrement l’effet Schufftan. Pour ce dernier, il utilise des miroirs inclinés pour créer l’illusion que les acteurs occupent des décors géants. Cette invention sera utilisée deux ans plus tard par Alfred Hitchcock dans Chantage sorti en 19292.', content: '', category: technical_category)
 
-
-# THEMES / DESHUMANISATION
-movie.notices.create(title: 'Mis au Pas', timecode: '260', short_content: 'Ces travailleurs apparaissent comme «mis au pas», privés de liberté et de libre arbitre, épuisés par un labeur exténuant.', content: 'Ces travailleurs apparaissent comme «mis au pas», privés de liberté et de libre arbitre, épuisés par un labeur exténuant. Leur démarche mécanique évoque le monde dans lequel ils vivent et auquel ils ressemblent : ce sont de véritables « hommes machines », de vrais robots.', category: deshumanisation_category)
-movie.notices.create(title: 'Âme et singularité dévorées', timecode: '805', short_content: 'L’usine elle-même, telle Chronos dévorant ses enfants, se nourrit de chair humaine. Lorsqu’ils ne périssent pas physiquement, les ouvriers sont tout simplement anéantis dans leur âme et leur singularité.', content: 'L’usine elle-même, telle Chronos dévorant ses enfants, se nourrit de chair humaine. Lorsqu’ils ne périssent pas physiquement, les ouvriers sont tout simplement anéantis dans leur âme et leur singularité.', category: deshumanisation_category)
+movie.notices.create(title: 'Les rescapés', timecode: '401', short_content: 'On peut supposer que les hommes libres échappent à cette instrumentalisation et peuvent développer leur humanité et leur singularité.', content: 'On peut supposer que les hommes libres échappent à cette instrumentalisation et peuvent développer leur humanité et leur singularité.', category: deshumanisation_category)
+movie.notices.create(title: 'Inversion Homme Machine', timecode: '1920', short_content: 'Ce que met en scène Fritz Lang, c’est l’inversion du rapport homme machine avec l’organisation scientifique du travail. Ce n’est plus l’homme qui porte et dirige la machine mais l’inverse. Dans Metropolis, les ouvriers sont tout bonnement crucifiés sur des horloges.', content: 'Ce que met en scène Fritz Lang, c’est l’inversion du rapport homme machine avec l’organisation scientifique du travail. Ce n’est plus l’homme qui porte et dirige la machine mais l’inverse. Dans Metropolis, les ouvriers sont tout bonnement crucifiés sur des horloges.', category: deshumanisation_category)
 

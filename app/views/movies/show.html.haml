@@ -1,14 +1,17 @@
 .movie
-	.movie-scope.with-font{ href: '/' }
-		SC
-		%span.blue> 0
-		PE
+	/ .movie-scope.with-font{ href: '/' }
+	/ 	SC
+	/ 	%span.blue> 0
+	/ 	PE
 
-	.movie-author
-		= @movie.author
+	%img{ src: '/assets/finder-found-picto.png'}
+	.found Nous vous conseillons
 
 	%h1.movie-title.with-font
 		= @movie.title
+
+	.movie-author
+		= @movie.author
 
 	.movie-year
 		= @movie.year

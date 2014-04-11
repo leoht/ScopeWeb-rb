@@ -1,12 +1,22 @@
 class UsersController < ApplicationController
 
+  before_filter :set_user, only: [:show, :movies, :friends]
+
   def register
   	@user = current_user
 
   end
 
   def show
-  	@user = User.find(params[:id])
+  	
+  end
+
+  def movies
+    @movies = @user.movies
+  end
+
+  def friends
+    @friends = @user.friends
   end
 
   def me
@@ -17,4 +27,9 @@ class UsersController < ApplicationController
   	  redirect_to user_path(@user)
   	end
   end
+
+  private
+    def set_user
+      @user = User.find(params[:id])
+    end
 end

@@ -16,7 +16,7 @@ body, html {
 		width: 600px;
 		text-align: center;
 		margin: 120px auto 0 auto;
-		font-size: 94px;
+		font-size: 110px;
 
 		a { color: white; }
 	}
@@ -24,15 +24,20 @@ body, html {
 	.home-subtitle {
 		@extend .home-title;
 		margin-top: 0px;
-		font-size: 13px;
+		font-size: 20px;
+		color: #7a7c83;
 		
 		text-transform: uppercase;
+	}
+
+	.home-intro {
+		width: 600px;  margin: 20px auto; font-size: 14px; text-align: center;
 	}
 
 	.home-actions {
 		text-transform: uppercase;
 		width: 600px;
-		margin: 100px auto 0 auto;
+		margin: 50px auto 0 auto;
 		text-align: center;
 
 		a#sign_in {

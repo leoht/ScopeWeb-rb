@@ -1,0 +1,9 @@
+.user.user-friends
+	= render :partial => 'sidebar'
+
+	.user-content
+		%h1.title.with-font Amis
+		
+		.friends
+			- for friend in @friends
+				= friend.name

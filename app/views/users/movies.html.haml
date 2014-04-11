@@ -1,0 +1,16 @@
+.user.user-movies
+	= render :partial => 'sidebar'
+
+	.user-content
+		%h1.title.with-font Films vus
+		.movie-count #{@movies.count} résultat(s)
+		- for movie in @movies
+			.movie
+				.movie-left
+					.movie-info
+						.title= movie.title
+						.author= movie.author
+						.year= movie.year
+
+				.movie-right
+					#{movie.comments.where(:user => @user).count} message(s) posté(s)

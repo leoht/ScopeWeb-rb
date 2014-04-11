@@ -29,8 +29,8 @@ a {
 }
 
 .navbar {
-	padding: 8px 0 6px 0;
-	border-bottom: 2px solid $scope_blue;
+	padding: 10px 0 6px 0;
+	border-bottom: 1px solid $scope_blue;
 	z-index: 200;
 	position: fixed; top: 0; left: 0;
 	background: #020202;
@@ -41,23 +41,29 @@ a {
 		color: white;
 		text-transform: uppercase;
 		margin: 0 8px 0 8px;
-		font-size: 12px;
+		font-size: 14px;
 		position: relative; bottom: 8px;
 		border-left: 1px solid white;
 		padding: 0 8px 0 15px;
 	}
+
+	a.blue { color: $scope_blue; }
 	
 	a.nav-scope {
 		bottom: 0;
 		color: white;
 		font-size: 30px;
-		padding-left: 10px;
+		padding-left: 20px;
 		border-left: 0px;
 	}
 
 	.nav-right {
 		float: right;
-		position: relative; top: 15px; right: 25px;
+		position: relative; top: 0px; right: 25px; padding: 18px 0 0 35px;
+		background: asset-url('navbar-profile.png') no-repeat left top;
+		height: 28px;
+
+		a { border: none; color: $scope_blue; }
 	}
 
 	.nav-search {

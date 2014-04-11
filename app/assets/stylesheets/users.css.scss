@@ -7,16 +7,34 @@ $scope_blue: #04e5e8;
 .user {
 	margin: 0 auto 0 auto;
 	width: 100%; height: 100%;
+	background: #fff;
 
-	background: asset-url('fake-profile.jpg') no-repeat left -10px;
-	background-size: cover;
+	.user-sidebar {
+		width: 260px; height: 100%;
+		position: absolute; top: 0; left: 0;
 
-	.user-profile-title { color: white; }
-	.profile-picture { float: right; border: 1px solid $scope_blue; }
+		border-right: 1px solid #1f2327;
+		background: #071528;
+	}
+
+	.username { color: white; margin-top: 10px; }
+	.profile-picture { text-align: center; margin-top: 90px;}
 
 	.user-movie {
 		padding-left: 20px; 
 
 		a { color: white; text-transform: uppercase; }
+	}
+
+	.user-content {
+		position: absolute; top: 0px; left: 260px;
+		padding: 80px 20px 20px 50px;
+		color: black;
+
+		.title {
+			text-transform: uppercase; color: #00bdbc;
+		}
+
+		.movie { background: none; text-align: left;}
 	}
 }

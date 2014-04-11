@@ -13,7 +13,12 @@ Scope::Application.routes.draw do
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
   get 'me', to: 'users#me', as: 'my_profile'
-  resources :users, only: [:show]
+
+  resources :users, only: [:show] do
+    get 'movies', on: :member
+    get 'friends', on: :member
+  end
+
   get 'register', to: 'users#register', as: 'register'
 
   resources :sessions, only: [:create, :destroy]

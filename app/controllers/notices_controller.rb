@@ -25,6 +25,15 @@ class NoticesController < ApplicationController
   def share
   end
 
+  # randomly picks notices for notice chooser API
+  def random
+    notices = Notice.all.shuffle[0..4]
+
+    respond_to do |format|
+      format.json { render json: notices.to_json }
+    end
+  end
+
   # Allow cross origin requests for ajax api.
   def allow_cors
     headers["Access-Control-Allow-Origin"] = "*"

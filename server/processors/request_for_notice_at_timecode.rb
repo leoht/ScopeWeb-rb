@@ -13,9 +13,18 @@ module Scope
 
           category = NoticeCategory.find notice.notice_category_id
 
-          answer.data = { :timecode => message.get('timecode').to_s, :id => notice.id.to_s, :title => notice.title, :short_content => notice.short_content, :color => category.color, :category_nicename => category.parent.nicename }
+          answer.data = { :timecode => message.get('timecode').to_s, :end_timecode => (message.get('timecode').to_i + 100), :id => notice.id.to_s, :title => notice.title, :short_content => notice.short_content, :color => category.color, :category_nicename => category.parent.nicename }
           puts " [x] Sending notice for timecode : " + message.get('timecode').to_s
           puts answer.data.inspect
+
+          # Register that user has seen this notice
+          if message.get('uid')
+            uid = message.get('uid')
+            user = User.find_by_uid uid
+            user.notices << notice
+            puts " [x] Registering user notice."
+            user.save
+          end
         end
 
         return answer

@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   	  redirect_to root_path
   	else
   	  @user = User.find_by_uid(current_user.uid)
-  	  redirect_to user_path(@user)
+  	  render 'users/show'
   	end
   end
 

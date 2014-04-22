@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140403131348) do
+ActiveRecord::Schema.define(version: 20140422124152) do
 
   create_table "comments", force: true do |t|
     t.text     "content"
@@ -112,6 +112,8 @@ ActiveRecord::Schema.define(version: 20140403131348) do
     t.datetime "updated_at"
     t.integer  "movie_id"
     t.integer  "notice_category_id"
+    t.text     "teasing"
+    t.string   "timecode_end"
   end
 
   create_table "notices_tags", id: false, force: true do |t|

@@ -23,6 +23,8 @@ Scope::Application.routes.draw do
 
   resources :sessions, only: [:create, :destroy]
 
+  get 'notices/random', to: 'notices#random'
+
   resources :movies do
     get 'watch',         on: :member
     get 'more',          on: :member

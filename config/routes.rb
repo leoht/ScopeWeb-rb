@@ -23,8 +23,6 @@ Scope::Application.routes.draw do
 
   resources :sessions, only: [:create, :destroy]
 
-  get 'notices/random', to: 'notices#random'
-
   resources :movies do
     get 'watch',         on: :member
     get 'more',          on: :member
@@ -35,6 +33,8 @@ Scope::Application.routes.draw do
 
     resources :notices, shallow: true do
       get 'share',  on: :member
+      get 'random', on: :collection
+      get 'search', on: :collection
     end
 
     resources :notice_categories do

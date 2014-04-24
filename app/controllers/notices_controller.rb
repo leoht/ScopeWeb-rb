@@ -34,6 +34,16 @@ class NoticesController < ApplicationController
     end
   end
 
+  def search
+    @query = params[:s]
+    s = '%'+ @query + '%'
+    @notices = Notice.find(:all, :conditions => ['title LIKE ? OR short_content LIKE ?', s, s])
+
+    respond_to do |format|
+      format.json { render json: @notices.to_json }
+    end
+  end
+
   # Allow cross origin requests for ajax api.
   def allow_cors
     headers["Access-Control-Allow-Origin"] = "*"

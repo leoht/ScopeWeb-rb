@@ -4,7 +4,11 @@ class NoticeCategoriesController < ApplicationController
   
   def index
   	id = params.permit(:movie_id).require(:movie_id)
-  	@categories = NoticeCategory.find_by_movie(id).notices
+  	@categories = NoticeCategory.all
+
+    respond_to do |format|
+      format.json { render json: @categories.to_json }
+    end
   end
 
   def show

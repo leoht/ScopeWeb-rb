@@ -184,9 +184,10 @@ div.movie-more {
 		position: absolute; top: 450px;
 
 		.line {
-			background: $scope_blue;
+			background: #9ea3a9;
 			height: 2px;
-			width: 100%;
+			width: 50%;
+			margin: auto;
 		}
 
 		.line-elements {

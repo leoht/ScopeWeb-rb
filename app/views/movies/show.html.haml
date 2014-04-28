@@ -8,7 +8,7 @@
 	/ .found Nous vous conseillons
 
 	%h1.movie-title.with-font
-		= @movie.title
+		= @movie.title.gsub 'o', '0'
 
 	.movie-author
 		= @movie.author

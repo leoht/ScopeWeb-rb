@@ -23,6 +23,7 @@
 			.nav-search
 				%form.search-form{ action: search_movies_path, method: :get }
 					%input{ type: :text, name: :s, placeholder: 'Rechercher un film' }
+					%img.submit{ src: '/assets/search-btn.png' }
 			
 			.nav-right
 				- if current_user

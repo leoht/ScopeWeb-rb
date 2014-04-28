@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$scope_blue: #04e5e8;
+
 body, html {
 	background: #071528;
 	color: white;
@@ -12,6 +14,11 @@ body, html {
 }
 
 .home {
+	width: 100%; height: 100%;
+	position: absolute; top: 0;
+	background: #000 asset-url('home-bg.png') no-repeat center center;
+	background-size: cover;
+
 	.home-title {
 		width: 600px;
 		text-align: center;
@@ -31,7 +38,7 @@ body, html {
 	}
 
 	.home-intro {
-		width: 600px;  margin: 20px auto; font-size: 14px; text-align: center;
+		width: 600px;  margin: 20px auto 0 auto; font-size: 14px; line-height: 22px; text-align: center;
 	}
 
 	.home-actions {
@@ -41,7 +48,14 @@ body, html {
 		text-align: center;
 
 		a#sign_in {
-			font-size: 16px;
+			font-size: 14px;
+			padding: 6px 14px 8px 14px;
+			background: $scope_blue;
+			color: black;
+			display: block;
+			margin: 20px auto;
+			width: 260px; 
+			font-family: 'Aller-Bd', sans-serif;
 		}
 	}
 

@@ -30,10 +30,10 @@ a {
 
 .navbar {
 	padding: 10px 0 6px 0;
-	border-bottom: 1px solid $scope_blue;
+	border-bottom: 1px solid #4e4e4e;
 	z-index: 200;
 	position: fixed; top: 0; left: 0;
-	background: #020202;
+	background: #161e26;
 	width: 100%;
 
 
@@ -41,10 +41,14 @@ a {
 		color: white;
 		text-transform: uppercase;
 		margin: 0 8px 0 8px;
-		font-size: 14px;
-		position: relative; bottom: 8px;
+		font-size: 12px;
+		position: relative; bottom: 0px;
 		border-left: 1px solid white;
-		padding: 0 8px 0 15px;
+		padding: 0 15px 0 15px;
+	}
+
+	a.active {
+		border-bottom: 2px solid $scope_blue;
 	}
 
 	a.blue { color: $scope_blue; }
@@ -55,6 +59,7 @@ a {
 		font-size: 30px;
 		padding-left: 20px;
 		border-left: 0px;
+		margin-right: 20px;	
 	}
 
 	.nav-right {
@@ -68,26 +73,25 @@ a {
 
 	.nav-search {
 		display: inline;
-		position: relative; bottom: 10px;
+		position: relative; bottom: 1px; left: 25px;
 		
 
 		form { display: inline; }
 
 		input {
 			height: 20px;
-			width: 300px;
+			width: 220px;
 
-			background-color: #212121;
-			border: 1px solid #2e2e2e;
+			background-color: transparent;
+			
+			border: none;
+			border-bottom: 1px solid #fff;
 			border-radius: 1px;
 			text-transform: uppercase;
-			padding: 4px 4px 4px 10px;
+			padding: 4px 4px 4px 0;
 			color: white;
 			font-size: 12px;
 
-			background-image: asset-url('search-bg.png');
-			background-repeat: no-repeat;
-			background-position: 96% center;
 		}
 	}
 }

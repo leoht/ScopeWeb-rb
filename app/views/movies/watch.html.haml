@@ -1,8 +1,9 @@
 .player-wrapper
     %video.player#player(controls)
         %source{ src: "/medias/film.m4v", type: 'video/mp4' }
+    
 
-    .player-controls
+    .player-controls{ style:'display:none;'}
         %button#play-pause-button.play{ onclick: 'togglePlayPause()' } Play
         %button{ onclick: 'toggleFastRewind()' } <<
         %button{ onclick: 'toggleFastForward()' } >>

@@ -7,6 +7,7 @@ module Scope
   	  	notice = ::Notice.where('movie_id = ? and timecode = ?', message.get('movie_id').to_s, message.get('timecode').to_s).first
 
         if notice.kind_of? ::Notice
+
           answer = Message.new
           answer.direction = MessageTypes::BROADCAST
           answer.name = MessageTypes::NOTICE_AT_TIMECODE

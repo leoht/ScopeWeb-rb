@@ -12,7 +12,9 @@ module Scope
 
       	# device requests notice or comment
       	when MessageTypes::REQUEST_FOR_NOTICE_AT_TIMECODE then
-      		processed_message = Scope::Processor::RequestForNoticeAtTimecode.process message
+      		if message.get('timecode').to_s != '10'
+            processed_message = Scope::Processor::RequestForNoticeAtTimecode.process message
+          end
 
       	when MessageTypes::REQUEST_FOR_COMMENT_AT_TIMECODE then
       		processed_message = Scope::Processor::RequestForCommentAtTimecode.process message

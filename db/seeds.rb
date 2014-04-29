@@ -17,7 +17,7 @@ movie.year = 1929
 movie.file = 'metropolis.mp4'
 movie.save
 
-movie.comments.create(timecode: '50', content: 'Ce film est vraiment incroyable, merci Scope !', user_id: 1)
+# movie.comments.create(timecode: '50', content: 'Ce film est vraiment incroyable, merci Scope !', user_id: 1)
 
 # Related movies
 

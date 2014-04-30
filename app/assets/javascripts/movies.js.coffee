@@ -7,6 +7,14 @@ window.relatedMovieCounter = 0;
 window.relatedFactCounter = 0;
 
 $(document).ready ->
+
+	window.slideNext = () ->
+		$('.finder, .movie-found').animate { left: '-=120%' }, 700
+		percent = Number window.percent + 30
+		$('.finder-progression .progress-bar').css 'width', percent+'%'
+		$('.progress-percent').css 'left', percent+'%'
+		$('.progress-percent .num').text percent
+		window.percent = percent
 	
 	window.finderPushMovie = () ->
 		data = MOVIES[window.relatedMovieCounter]
@@ -22,7 +30,7 @@ $(document).ready ->
 
 		window.relatedMovieCounter++
 
-		$('.poster-img').attr 'src', '/assets/samples/' + data.image
+		$('.related-movies .poster-img').attr 'src', '/assets/samples/' + data.image
 
 	window.finderShiftMovie = (data) ->
 		ball = $('<div>')
@@ -42,7 +50,7 @@ $(document).ready ->
 		window.percent = percent
 
 		if window.relatedMovieCounter == 4
-			document.location.href = NEXT_URL
+			slideNext();
 
 
 	window.finderPushFact = () ->
@@ -81,7 +89,7 @@ $(document).ready ->
 		window.percent = percent
 
 		if window.relatedFactCounter == 4
-			document.location.href = NEXT_URL
+			slideNext();
 
 	if typeof(MOVIES) != 'undefined'
 		finderPushMovie()

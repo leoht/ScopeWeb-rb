@@ -20,7 +20,10 @@ class MoviesController < ApplicationController
 		case @step
 		when '1' then
 			@percent = 0
-			render 'movies/finder/mood', layout: 'tunnel'
+			@related_movies = RelatedMovie.all.limit 5
+			@related_facts = MovieRelatedFact.all.limit 5
+			@movie = Movie.take
+			render 'movies/find', layout: 'tunnel'
 		when '2' then
 			@percent = 30
 			@related_movies = RelatedMovie.all.limit 5

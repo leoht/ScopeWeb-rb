@@ -15,6 +15,18 @@ $(document).ready ->
 		$('.progress-percent').css 'left', percent+'%'
 		$('.progress-percent .num').text percent
 		window.percent = percent
+
+	window.slideToMovieMore = () ->
+		$('.movie-found').animate {
+			paddingTop: '100px'
+		}, 600, () ->
+			# document.location.href = NEXT_URL;
+
+		$('.movie-actions').fadeOut 600, () ->
+			$('.movie-more-nav').fadeIn 600
+			$('.movie-more-content').fadeIn 600
+
+
 	
 	window.finderPushMovie = () ->
 		data = MOVIES[window.relatedMovieCounter]
@@ -90,6 +102,7 @@ $(document).ready ->
 
 		if window.relatedFactCounter == 4
 			slideNext();
+			$('.finder-progression').fadeOut 400
 
 	if typeof(MOVIES) != 'undefined'
 		finderPushMovie()

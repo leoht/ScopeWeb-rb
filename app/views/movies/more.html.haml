@@ -6,14 +6,14 @@
 			%a.social{ href: community_movie_path(@movie) } 
 
 	.movie-more-head
-		/ .movie-author
-		/ 	= @movie.author
+		%h1.movie-title.with-font
+			= @movie.title
 
-		/ %h1.movie-title.with-font
-		/ 	= @movie.title
+		.movie-author
+			= @movie.author
 
-		/ .movie-year
-		/ 	= @movie.year
+		.movie-year
+			= @movie.year
 
 		.movie-more-nav
 			.doc

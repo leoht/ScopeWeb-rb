@@ -53,7 +53,7 @@
 	%script
 		var FACTS = [];
 		var data = [];
-		var NEXT_URL = "#{find_movies_path(step: 4)}";
+		var NEXT_URL = "#{more_movie_path(@movie)}";
 		- for fact in @related_facts
 			data = { id: "#{fact.id}", image: "#{fact.photo}", title: "#{fact.title}", text: "#{fact.content}"};
 			FACTS.push(data);
@@ -99,7 +99,7 @@
 	/ .found Nous vous conseillons
 
 	%h1.movie-title.with-font
-		= @movie.title.gsub 'o', '0'
+		= @movie.title
 
 	.movie-author
 		= @movie.author
@@ -108,11 +108,34 @@
 		= @movie.year
 
 	.movie-actions
-		%a.movie-more.button-link{ href: more_movie_path(@movie) }
+		%a.movie-more.button-link{ href: '#', onclick: 'slideToMovieMore(); return false;' }
 			En savoir +
 
 		%a.movie-watch.button-link{ href: watch_movie_path(@movie) }
 			Lecture du film
 
+	.movie-more-nav
+		.doc
+			%a.button-link{ href: documentation_movie_path(@movie) } Documentation
+		.watch
+			%a.button-link{ href: watch_movie_path(@movie) } Lecture
+		.social
+			%a.button-link{ href: community_movie_path(@movie) } Communauté
+
+	.movie-more-content
+		.synopsis
+			%h2.with-font SYN0PSIS
+			.content
+				%p Metropolis est une mégapole futuriste dans une société dystopique divisée en une ville haute, où vivent les familles intellectuelles dirigeantes, dans le luxe et le divertissement, et une ville basse, où les travailleurs font fonctionner la ville et sont opprimés par la classe dirigeante.
+				%p Maria, une femme de la ville basse, emmène clandestinement des enfants visiter la ville haute. Le groupe se fait repousser, mais Freder Fredersen, le fils du dirigeant de Metropolis, tombe amoureux d’elle. 
+				%p En descendant dans la ville basse pour la retrouver, il découvre l’atroce vie infligé aux ouvriers.
+
+			.discover-more
+				%a{ href: '#trailer' } Découvrir
+
+		.trailer#trailer
+		
+
 	/ %a.movie-new-search{ href: find_movies_path }
 	/ 	nouvelle recherche
+

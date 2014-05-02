@@ -27,7 +27,7 @@ class NoticesController < ApplicationController
 
   # randomly picks notices for notice chooser API
   def random
-    notices = Notice.all.shuffle[0..4]
+    notices = Notice.where('id IN (40, 3, 28, 37, 42)')
 
     respond_to do |format|
       format.json { render json: notices.to_json }

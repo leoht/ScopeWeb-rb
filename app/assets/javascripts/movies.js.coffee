@@ -61,7 +61,7 @@ $(document).ready ->
 		$('.progress-percent .num').text percent
 		window.percent = percent
 
-		if window.relatedMovieCounter == 4
+		if window.relatedMovieCounter == 3
 			slideNext();
 
 

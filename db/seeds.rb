@@ -24,7 +24,7 @@ movie.save
 movie.related_movies  << RelatedMovie.create(title: 'Inglorious Basterds', image: 'poster-inglorious.jpg', year: '2011')
 movie.related_movies  << RelatedMovie.create(title: 'Le Cinquième Element', image: 'poster-5e-element.jpg', year: '1997')
 movie.related_movies  << RelatedMovie.create(title: 'Blade Runner', image: 'poster-blade.jpg', year: '1982')
-movie.related_movies  << RelatedMovie.create(title: 'Edward aux mains d\'argent', image: 'poster-edward.jpg', year: '1990')
+# movie.related_movies  << RelatedMovie.create(title: 'Edward aux mains d\'argent', image: 'poster-edward.jpg', year: '1990')
 
 # Related facts
 

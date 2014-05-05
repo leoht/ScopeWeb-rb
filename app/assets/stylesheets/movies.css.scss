@@ -279,12 +279,12 @@ div.movie-more {
 		}
 
 		.line-ball {
-			width: 12px; height: 12px; background: asset-url('finder-line-ball.png') no-repeat center center; position: absolute; top: calc(470px - 6px); 
+			width: 12px; height: 12px; background: asset-url('finder-line-ball.png') no-repeat center center; position: absolute; top: calc(46% - 6px); 
 		}
 
 		#movie-1 { display: block; }
 
-		.yes, .no { cursor: pointer; position: absolute; top: calc(46% - 35px); width: 70px; height: 70px; }
+		.yes, .no { cursor: pointer; position: absolute; top: calc(46%	 - 35px); width: 70px; height: 70px; }
 		.yes { right: 18%; background: asset-url('finder-yes.png') no-repeat right center; }
 		.no { left: 18%; background: asset-url('finder-no.png') no-repeat left center; }
 

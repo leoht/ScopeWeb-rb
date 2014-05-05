@@ -34,13 +34,11 @@
                         api.send(BEGIN_FACEBOOK_ASSOCIATION, { 'facebook_id': FACEBOOK_ID });
                     })
                 } else {
-                     document
-                    .querySelectorAll('.get-code-button')[0]
-                    .addEventListener('click', function () {
-                        api.beginConnection(function () {
-                            api.send(BEGIN_CODE_ASSOCIATION, {})
-                        })
+                    
+                    api.beginConnection(function () {
+                        api.send(BEGIN_CODE_ASSOCIATION, {})
                     });
+                    
                 }
             });
         });

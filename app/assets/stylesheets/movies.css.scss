@@ -185,7 +185,7 @@ div.movie-more {
 .finder {
 
 	text-align: center;
-	padding-top: 100px;
+	padding-top: 150px;
 	height: 100%;
 	width: 100%;
 	
@@ -194,15 +194,16 @@ div.movie-more {
 	h1 {
 		text-transform: uppercase;
 		margin-top: 5px;
+		font-size: 28px;
 	}
 
-	.finder-subtitle { text-transform: uppercase; font-size: 16px; }
+	.finder-subtitle { text-transform: uppercase; font-size: 14px; }
 
 	.mood-buttons {
 
 		text-align: center;
 		width: 900px;
-		margin: 30% auto 0 auto;
+		margin: 30px auto 0 auto;
 
 		.button-link {
 			cursor: pointer;
@@ -211,24 +212,25 @@ div.movie-more {
 			margin-right: 15px;
 			font-size: 14px;
 			text-transform: none;
+			height: 15px;
 		}
 
 	}
 
 	.mood-line {
 		width: 100%;
-		position: absolute; top: 40%;
+		position: absolute; top: 420px;
 
 		.line {
-			background: #9ea3a9;
-			height: 2px;
-			width: 50%;
-			margin: auto;
+			background: #636b75;
+			height: 1px;
+			width: 100%;
+			margin: 0 0 0 100px;
 			margin-top: 70px;
 		}
 
 		.line-elements {
-			width: 850px;
+			width: 1050px;
 			margin: auto;
 			position: relative; bottom: 70px;
 		}
@@ -239,17 +241,17 @@ div.movie-more {
 			width: 140px; height: 80px;
 			
 			padding-top: 90px;
-			font-size: 18px;
+			font-size: 14px;
 			float: left;
 			
-			margin-right: 30px;
+			margin-right: 70px;
 		}
 
-		#line-emotions { background: asset-url('mood-emotions.png') no-repeat center top, asset-url('finder-mood-ball.png') no-repeat center 60px; }
-		#line-escape { background: asset-url('mood-escape.png') no-repeat center top, asset-url('finder-mood-ball.png') no-repeat center 60px; }
-		#line-scared { background: asset-url('mood-scared.png') no-repeat center top, asset-url('finder-mood-ball.png') no-repeat center 60px; }
-		#line-action { background: asset-url('mood-action.png') no-repeat center top, asset-url('finder-mood-ball.png') no-repeat center 60px; }
-		#line-laugh { background: asset-url('mood-laugh.png') no-repeat center top, asset-url('finder-mood-ball.png') no-repeat center 60px; }
+		#line-emotions { background: asset-url('mood-emotions.png') no-repeat center top, asset-url('finder-mood-ball.png') no-repeat center 65px; }
+		#line-escape { background: asset-url('mood-escape.png') no-repeat center top, asset-url('finder-mood-ball.png') no-repeat center 65px; }
+		#line-scared { background: asset-url('mood-scared.png') no-repeat center top, asset-url('finder-mood-ball.png') no-repeat center 65px; }
+		#line-action { background: asset-url('mood-action.png') no-repeat center top, asset-url('finder-mood-ball.png') no-repeat center 65px; }
+		#line-laugh { background: asset-url('mood-laugh.png') no-repeat center top, asset-url('finder-mood-ball.png') no-repeat center 65px; }
 	}
 
 	
@@ -279,24 +281,32 @@ div.movie-more {
 		}
 
 		.line-ball {
-			width: 12px; height: 12px; background: asset-url('finder-line-ball.png') no-repeat center center; position: absolute; top: calc(46% - 6px); 
+			width: 12px; height: 12px; background: asset-url('finder-line-ball.png') no-repeat center center; position: absolute; top: calc(500px - 6px); 
 		}
 
 		#movie-1 { display: block; }
 
-		.yes, .no { cursor: pointer; position: absolute; top: calc(46%	 - 35px); width: 70px; height: 70px; }
-		.yes { right: 18%; background: asset-url('finder-yes.png') no-repeat right center; }
-		.no { left: 18%; background: asset-url('finder-no.png') no-repeat left center; }
+		.controls {
+			width: 380px; margin: 0 auto 0 auto;
+			text-align: center;
 
-		.line-yes { position: absolute; right: 0px; top: 46%; height: 1px; width: 18%; background: $scope_blue; }
-		.line-no { position: absolute; left: 0px; top: 46%; height: 1px; width: 18%; background: $scope_blue; }
+			div {
+				display: inline-block; cursor: pointer; width: 100px; height: 70px; padding-top: 70px; text-align: center; font-size: 12px;
+			}
+		}
 
-		.not-seen { display: block; cursor: pointer; margin: 60px auto; width: 150px; text-transform: uppercase; color: #fff; font-size: 12px; font-weight: bold; }
+		.yes {  background: asset-url('finder-yes.png') no-repeat center top; }
+		.no {  background: asset-url('finder-no.png') no-repeat center top; }
+		.not-seen { background: asset-url('finder-refresh.png') no-repeat center top; }
+
+		.line-yes { position: absolute; right: 0px; top: 500px; height: 1px; width: 35%; background: #636b75; }
+		.line-no { position: absolute; left: 0px; top: 500px; height: 1px; width: 35%; background: #636b75; }
+
 
 	}
 
 	.next a {
-		position: absolute; top: 43%; right: 30px;
+		position: absolute; top: 460px; right: 30px;
 		width: 62px; height: 85px;
 		display: block;
 		background: asset-url('finder-next.png') no-repeat center center;

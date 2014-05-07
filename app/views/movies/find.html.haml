@@ -36,13 +36,19 @@
 				.fact-title.with-font
 				%p.fact-text
 
-			.no{ onclick: 'finderShiftFact(); finderPushFact();'}
+			
 
 			.line-no
 
-			.yes{ onclick: 'finderShiftFact(); finderPushFact();'}
+			
 
 			.line-yes
+
+			.controls
+				.no{ onclick: 'finderShiftFact(); finderPushFact();'} non
+				.not-seen{ onclick: 'finderShiftMovie(); finderPushMovie();'} changer
+				.yes{ onclick: 'finderShiftFact(); finderPushFact();'} oui
+				
 
 			/.line-ball
 
@@ -66,18 +72,19 @@
 			.movie
 				.poster
 					%img.poster-img{ src: '' }
-			.no{ onclick: 'finderShiftMovie(); finderPushMovie();'}
+			
 
 			.line-no
-
-			.yes{ onclick: 'finderShiftMovie(); finderPushMovie();'}
 
 			.line-yes
 
 			/.line-ball
 
-			%a.not-seen.button-link{ onclick: 'finderShiftMovie(); finderPushMovie();'} Je ne l'ai pas vu
-
+			.controls
+				
+				.no{ onclick: 'finderShiftMovie(); finderPushMovie();'} non
+				.not-seen{ onclick: 'finderShiftMovie(); finderPushMovie();'} changer
+				.yes{ onclick: 'finderShiftMovie(); finderPushMovie();'} oui
 			/.next
 			/	= link_to '', find_movies_path(step: 3)
 

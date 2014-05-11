@@ -21,17 +21,16 @@ movie.save
 
 # Related movies
 
-movie.related_movies  << RelatedMovie.create(title: 'Inglorious Basterds', image: 'poster-inglorious.jpg', year: '2011')
-movie.related_movies  << RelatedMovie.create(title: 'Le Cinquième Element', image: 'poster-5e-element.jpg', year: '1997')
-movie.related_movies  << RelatedMovie.create(title: 'Blade Runner', image: 'poster-blade.jpg', year: '1982')
+movie.related_movies  << RelatedMovie.create(title: 'Inglorious Basterds', image: 'inglorious.png', year: '2011')
+movie.related_movies  << RelatedMovie.create(title: 'Le Cinquième Element', image: '5e-element.png', year: '1997')
+movie.related_movies  << RelatedMovie.create(title: 'Blade Runner', image: 'blade.png', year: '1982')
 # movie.related_movies  << RelatedMovie.create(title: 'Edward aux mains d\'argent', image: 'poster-edward.jpg', year: '1990')
 
 # Related facts
 
-movie.related_facts <<  MovieRelatedFact.create(title: 'Curiosity débarque sur Mars', content: 'En août 2012, la NASA déploie la sonde Curiosity afin d’explorer le sol martien et d’ouvrir de nouveux horizons à la conquête spatiale.', photo: 'photo-curiosity.jpg')
-movie.related_facts <<  MovieRelatedFact.create(title: 'La moto Superbike de Tron devient réalité', content: 'La marque anglaise Lotus s’est associée au graphiste Daniel Simon pour concevoir un modèle de moto très grandement inspiré du film Tron', photo: 'photo-tron.jpg')
-movie.related_facts <<  MovieRelatedFact.create(title: 'Foxconn veut remplacer ses ouvriers par des robots', content: 'Le plus grand fabricant mondial de matériel informatique souhaite remplacer un million de ses employés en usine par des robots, afin d’améliorer sa productivité.', photo: 'photo-foxconn.jpg')
-movie.related_facts <<  MovieRelatedFact.create(title: 'Google mise sur ses robots', content: 'Depuis quelques mois, le géant du web Google rachète de nombreuses entreprises spécialisées dans la robotique. La firme souhaite-t-elle se créer une “armée” de robots pour ses prochains projets ?', photo: 'photo-google.jpg')
+movie.related_facts <<  MovieRelatedFact.create(title: 'Curiosity sur Mars', content: 'En août 2012, la NASA déploie la sonde Curiosity afin d’explorer le sol martien et d’ouvrir de nouveux horizons à la conquête spatiale.', photo: 'curiosity.png')
+movie.related_facts <<  MovieRelatedFact.create(title: 'Foxconn veut remplacer ses ouvriers par des robots', content: 'Le plus grand fabricant mondial de matériel informatique souhaite remplacer un million de ses employés en usine par des robots, afin d’améliorer sa productivité.', photo: 'foxconn.png')
+movie.related_facts <<  MovieRelatedFact.create(title: 'Google mise sur ses robots', content: 'Depuis quelques mois, le géant du web Google rachète de nombreuses entreprises spécialisées dans la robotique. La firme souhaite-t-elle se créer une “armée” de robots pour ses prochains projets ?', photo: 'google.png')
 
 # movie.chapters.create(number: 1, title: 'Enfer et Paradis', timecode: '60')
 # movie.chapters.create(number: 2, title: 'La Révélation', timecode: '572')

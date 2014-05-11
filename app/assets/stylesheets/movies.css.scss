@@ -185,7 +185,7 @@ div.movie-more {
 .finder {
 
 	text-align: center;
-	padding-top: 150px;
+	padding-top: 140px;
 	height: 100%;
 	width: 100%;
 	
@@ -197,13 +197,13 @@ div.movie-more {
 		font-size: 28px;
 	}
 
-	.finder-subtitle { text-transform: uppercase; font-size: 14px; }
+	.finder-subtitle { text-transform: uppercase; font-size: 14px; color: #595e65; }
 
 	.mood-buttons {
 
 		text-align: center;
 		width: 900px;
-		margin: 30px auto 0 auto;
+		margin: 70px auto 0 auto;
 
 		.button-link {
 			cursor: pointer;
@@ -213,6 +213,7 @@ div.movie-more {
 			font-size: 14px;
 			text-transform: none;
 			height: 15px;
+			padding-top: 8px;
 		}
 
 	}
@@ -257,28 +258,35 @@ div.movie-more {
 	
 
 	.related-movies, .related-facts {
-		.movie {
-			width: 354px;
-			height: 482px;
-			margin: 60px auto;
+
+		.movie, .fact {
+			margin: 150px auto;
 			padding: 0;
+			background: none;
+			height: 280px;
 		}
 
-		.fact {
-			width: 500px;
-			margin: 5% auto 0 auto;
-			background: #e3e3e3;
-			padding: 5px;
+		.circle-wrapper {
+			position: absolute; z-index: 0; top: 348px; left: 0;
+			width: 100%;
+			.circle {
+				width: 316px; height: 316px;
+				margin: auto;
+				background: asset-url('samples/finder-circle.png') no-repeat center;
+				
+			}
 		}
 
-		.fact-title { color: #f0004e; font-size: 22px; text-transform: uppercase; padding-top: 15px; }
-		.fact-text { color: black; padding: 5px 15px; }
+		
+		.content {
+			position: relative; bottom: 180px;
+			width: 250px;
+			margin: auto;
 
-		.fact-img {
-			max-width: 500px;
-			max-height: 482px;
-			margin: 0;
+			.fact-title { color: #f0004e; font-size: 16px; text-transform: uppercase; padding-top: 15px; }
+			.fact-text { color: black; padding: 5px 15px; font-size: 12px; }
 		}
+		
 
 		.line-ball {
 			width: 12px; height: 12px; background: asset-url('finder-line-ball.png') no-repeat center center; position: absolute; top: calc(500px - 6px); 
@@ -299,8 +307,8 @@ div.movie-more {
 		.no {  background: asset-url('finder-no.png') no-repeat center top; }
 		.not-seen { background: asset-url('finder-refresh.png') no-repeat center top; }
 
-		.line-yes { position: absolute; right: 0px; top: 500px; height: 1px; width: 35%; background: #636b75; }
-		.line-no { position: absolute; left: 0px; top: 500px; height: 1px; width: 35%; background: #636b75; }
+		.line-yes { position: absolute; right: 0px; top: 500px; height: 1px; width: 37%; background: #636b75; }
+		.line-no { position: absolute; left: 0px; top: 500px; height: 1px; width: 37%; background: #636b75; }
 
 
 	}
@@ -349,12 +357,11 @@ div.movie-more {
 
 
 .finder-progression {
-	background: asset-url('page-layout-bottom.png') repeat-x left 95%;
 	width: 100%;
 	height: 60px;
-	position: absolute; bottom: 35px; left: 0;
+	position: absolute; bottom: 5px; left: 0;
 
-	.progress-percent { font-size: 20px; position: relative; }
+	.progress-percent { font-size: 20px; position: relative; top: 10px; }
 
 	.progress-bar {
 		background: $scope_blue;

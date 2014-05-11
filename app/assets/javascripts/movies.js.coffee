@@ -137,41 +137,41 @@ $(document).ready ->
 		window.percent = percent
 
 	$('#mood-laugh').click ->
-		$(this).animate { opacity: 0}, 400
+		$(this).text ''
 		$('#line-laugh').fadeIn 400
 
 	$('#mood-scared').click ->
-		$(this).animate { opacity: 0}, 400
+		$(this).text ''
 		$('#line-scared').fadeIn 400
 
 	$('#mood-escape').click ->
-		$(this).animate { opacity: 0}, 400
+		$(this).text ''
 		$('#line-escape').fadeIn 400
 
 	$('#mood-action').click ->
-		$(this).animate { opacity: 0}, 400
+		$(this).text ''
 		$('#line-action').fadeIn 400
 
 	$('#mood-emotions').click ->
-		$(this).animate { opacity: 0}, 400
+		$(this).text ''
 		$('#line-emotions').fadeIn 400
 
 	$('#line-laugh').click ->
 		$(this).fadeOut 400
-		$('#mood-laugh').animate { opacity: 1 }, 400
+		$('#mood-laugh').text 'De rire'
 
 	$('#line-scared').click ->
 		$(this).fadeOut 400
-		$('#mood-scared').animate { opacity: 1 }, 400
+		$('#mood-scared').text 'De frissons'
 
 	$('#line-escape').click ->
 		$(this).fadeOut 400
-		$('#mood-escape').animate { opacity: 1 }, 400
+		$('#mood-escape').text 'De s\'évader'
 
 	$('#line-action').click ->
 		$(this).fadeOut 400
-		$('#mood-action').animate { opacity: 1 }, 400
+		$('#mood-action').text 'D\'action'
 
 	$('#line-emotions').click ->
 		$(this).fadeOut 400
-		$('#mood-emotions').animate { opacity: 1 }, 400
+		$('#mood-emotions').text 'D\'émotions'

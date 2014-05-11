@@ -33,8 +33,9 @@
 			.fact
 				.image
 					%img.poster-img.fact-img{ src: '' }
-				.fact-title.with-font
-				%p.fact-text
+				.content
+					.fact-title.with-font
+					%p.fact-text
 
 			
 
@@ -48,6 +49,9 @@
 				.no{ onclick: 'finderShiftFact(); finderPushFact();'} non
 				.not-seen{ onclick: 'finderShiftMovie(); finderPushMovie();'} changer
 				.yes{ onclick: 'finderShiftFact(); finderPushFact();'} oui
+
+			.circle-wrapper
+				.circle
 				
 
 			/.line-ball
@@ -85,6 +89,10 @@
 				.no{ onclick: 'finderShiftMovie(); finderPushMovie();'} non
 				.not-seen{ onclick: 'finderShiftMovie(); finderPushMovie();'} changer
 				.yes{ onclick: 'finderShiftMovie(); finderPushMovie();'} oui
+
+			.circle-wrapper
+				.circle
+
 			/.next
 			/	= link_to '', find_movies_path(step: 3)
 

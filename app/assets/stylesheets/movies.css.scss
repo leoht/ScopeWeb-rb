@@ -170,6 +170,8 @@ div.movie-more {
 	width: 100%;
 	background: asset-url('finder-bg.png') no-repeat center center; 
 	background-size: cover;
+	-webkit-transition: all 500ms ease-in;
+	transition: all 500ms ease-in;
 }
 
 .movie-found {
@@ -193,11 +195,11 @@ div.movie-more {
 
 	h1 {
 		text-transform: uppercase;
-		margin-top: 5px;
+		margin-top: 10px;
 		font-size: 28px;
 	}
 
-	.finder-subtitle { text-transform: uppercase; font-size: 14px; color: #595e65; }
+	.finder-subtitle { text-transform: uppercase; font-size: 14px; color: #888; }
 
 	.mood-buttons {
 
@@ -220,14 +222,14 @@ div.movie-more {
 
 	.mood-line {
 		width: 100%;
-		position: absolute; top: 420px;
+		position: absolute; top: 400px;
 
 		.line {
 			background: #636b75;
 			height: 1px;
 			width: 100%;
 			margin: 0 0 0 100px;
-			margin-top: 70px;
+			
 		}
 
 		.line-elements {
@@ -260,20 +262,20 @@ div.movie-more {
 	.related-movies, .related-facts {
 
 		.movie, .fact {
-			margin: 150px auto;
+			margin: 60px auto;
 			padding: 0;
 			background: none;
 			height: 280px;
 		}
 
 		.circle-wrapper {
-			position: absolute; z-index: 0; top: 348px; left: 0;
+			position: absolute; z-index: 0; top: 261px; left: 0;
 			width: 100%;
 			.circle {
 				width: 316px; height: 316px;
 				margin: auto;
 				background: asset-url('samples/finder-circle.png') no-repeat center;
-				
+				transition: all 500ms ease-in;
 			}
 		}
 
@@ -289,7 +291,7 @@ div.movie-more {
 		
 
 		.line-ball {
-			width: 12px; height: 12px; background: asset-url('finder-line-ball.png') no-repeat center center; position: absolute; top: calc(500px - 6px); 
+			width: 12px; height: 12px; background: asset-url('finder-line-ball.png') no-repeat center center; position: absolute; top: calc(400px - 6px); 
 		}
 
 		#movie-1 { display: block; }
@@ -297,6 +299,7 @@ div.movie-more {
 		.controls {
 			width: 380px; margin: 0 auto 0 auto;
 			text-align: center;
+			
 
 			div {
 				display: inline-block; cursor: pointer; width: 100px; height: 70px; padding-top: 70px; text-align: center; font-size: 12px;
@@ -307,14 +310,14 @@ div.movie-more {
 		.no {  background: asset-url('finder-no.png') no-repeat center top; }
 		.not-seen { background: asset-url('finder-refresh.png') no-repeat center top; }
 
-		.line-yes { position: absolute; right: 0px; top: 500px; height: 1px; width: 37%; background: #636b75; }
-		.line-no { position: absolute; left: 0px; top: 500px; height: 1px; width: 37%; background: #636b75; }
+		.line-yes { position: absolute; right: 0px; top: 400px; height: 1px; width: 37%; background: #636b75; }
+		.line-no { position: absolute; left: 0px; top: 400px; height: 1px; width: 37%; background: #636b75; }
 
 
 	}
 
 	.next a {
-		position: absolute; top: 460px; right: 30px;
+		position: absolute; top: 370px; right: 30px;
 		width: 62px; height: 85px;
 		display: block;
 		background: asset-url('finder-next.png') no-repeat center center;
@@ -359,13 +362,13 @@ div.movie-more {
 .finder-progression {
 	width: 100%;
 	height: 60px;
-	position: absolute; bottom: 5px; left: 0;
+	position: absolute; bottom: -6px; left: 0;
 
 	.progress-percent { font-size: 20px; position: relative; top: 10px; }
 
 	.progress-bar {
 		background: $scope_blue;
-		height: 6px; width: 2%;
+		height: 8px; width: 2%;
 		margin-top: 18px;
 	}
 }

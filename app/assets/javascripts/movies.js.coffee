@@ -5,6 +5,7 @@
 window.isMenuDisplayed = false
 window.relatedMovieCounter = 0;
 window.relatedFactCounter = 0;
+window.step = 1
 
 $(document).ready ->
 
@@ -15,6 +16,12 @@ $(document).ready ->
 		$('.progress-percent').css 'left', percent+'%'
 		$('.progress-percent .num').text percent
 		window.percent = percent
+		window.step++
+
+		if window.step == 2
+			finderPushMovie()
+		if window.step == 3
+			finderPushFact()
 
 	window.slideToMovieMore = () ->
 		$('.movie-found').animate {
@@ -42,7 +49,13 @@ $(document).ready ->
 
 		window.relatedMovieCounter++
 
-		$('.related-movies .poster-img').attr 'src', '/assets/samples/' + data.image
+		spinCircle()
+		setTimeout () ->
+			$('.related-movies .poster-img').attr 'src', '/assets/samples/' + data.image
+		, 500
+		setTimeout () ->
+			$('.movie-finder').css 'background-image', 'url(/assets/samples/' + data.image + '.jpg)'
+		, 1000
 
 	window.finderShiftMovie = (data) ->
 		ball = $('<div>')
@@ -79,6 +92,8 @@ $(document).ready ->
 
 		window.relatedFactCounter++
 
+		$('.movie-finder').css 'background-image', 'url(/assets/samples/' + data.image + '.jpg)'
+
 		$('.fact-img').attr 'src', '/assets/samples/' + data.image
 		$('.fact-title').text data.title
 		$('.fact-text').text data.text
@@ -100,14 +115,15 @@ $(document).ready ->
 		$('.progress-percent .num').text percent
 		window.percent = percent
 
-		if window.relatedFactCounter == 4
+		if window.relatedFactCounter == 3
 			slideNext();
 			$('.finder-progression').fadeOut 400
 
-	if typeof(MOVIES) != 'undefined'
-		finderPushMovie()
-	if typeof(FACTS) != 'undefined'
-		finderPushFact()
+	window.spinCircle = () ->
+		$('.circle').css 'transform', 'rotate(360deg)'
+		setTimeout () ->
+			$('.circle').css 'transform', 'rotate(0deg)'
+		, 500
 
 	$('.synopsis').waypoint ->
 		if window.isMenuDisplayed

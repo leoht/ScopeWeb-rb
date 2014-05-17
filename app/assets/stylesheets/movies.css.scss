@@ -121,25 +121,7 @@ div.movie-more {
 	min-height: 2000px; // dirty, to remove
 	background: #eee;
 
-	.hidden-nav {
-		position: fixed; z-index: 150;
-		width: 100%;
-		height: 50px;
-		background: #232323;
-		border-bottom: 1px solid $scope_blue;
-		text-align: center;
-		top: 0px;
-
-		.hidden-nav-wrapper {
-			width: 600px;
-			margin: auto;
-
-			a { float: left; margin: 5px 80px 0 80px; display: block; width: 40px; height: 40px; }
-			a.doc { background: asset-url('movie-nav-doc.png') no-repeat center center; }
-			a.watch { background: asset-url('movie-nav-watch.png') no-repeat center center; }
-			a.social { background: asset-url('movie-nav-social.png') no-repeat center center; }
-		}
-	}
+	
 
 	.movie-more-head {
 		background-color: #18202b;
@@ -159,6 +141,27 @@ div.movie-more {
 
 	
 }
+
+.hidden-nav {
+		position: fixed; z-index: 150;
+		width: 100%;
+		height: 50px;
+		background: #071528;
+		border-bottom: 1px solid #b7babe;
+		text-align: center;
+		top: 0px;
+		padding-top: 10px;
+
+		.hidden-nav-wrapper {
+			width: 600px;
+			margin: auto;
+
+			a { float: left; margin: 5px 80px 0 80px; display: block; width: 40px; height: 40px; }
+			a.doc { background: asset-url('movie-nav-doc.png') no-repeat center center; }
+			a.watch { background: asset-url('movie-nav-watch.png') no-repeat center center; }
+			a.social { background: asset-url('movie-nav-social.png') no-repeat center center; }
+		}
+	}
 
 .movie-more-content {
 	display: none;

@@ -35,6 +35,17 @@ $(document).ready ->
 			$('.movie-more-content').fadeIn 600
 			$('.movie-found').css 'overflow', 'auto'
 
+		$('.movie #trailer').waypoint ->
+			if window.isMenuDisplayed
+				return
+
+			window.isMenuDisplayed = true
+
+			$('.hidden-nav').animate {
+				top: '+=60px'
+			}, 500
+
+
 
 	
 	window.finderPushMovie = () ->
@@ -142,26 +153,7 @@ $(document).ready ->
 			bottom: '+=100%'
 		}, 800
 
-	$('.synopsis').waypoint ->
-		if window.isMenuDisplayed
-			return
-
-		window.isMenuDisplayed = true
-
-		$('.hidden-nav').animate {
-			top: '+=55px'
-		}, 500
-
-	$('.movie-more-nav').waypoint ->
-		if not window.isMenuDisplayed
-			return
-
-		window.isMenuDisplayed = false
-
-		$('.hidden-nav').animate {
-			top: '-=55px'
-		}, 500
-
+	
 	$('.mood-buttons .button-link').click ->
 		percent = Number window.percent + 5
 		$('.finder-progression .progress-bar').css 'width', percent+'%'
@@ -208,3 +200,5 @@ $(document).ready ->
 	$('#line-emotions').click ->
 		$(this).fadeOut 400
 		$('#mood-emotions').text 'D\'émotions'
+
+	$.preloadCssImages()

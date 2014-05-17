@@ -110,6 +110,11 @@
 	/ 	%span.blue> 0
 	/ 	PE
 
+	.hidden-nav
+		.hidden-nav-wrapper
+			%a.doc{ href: documentation_movie_path(@movie) } 
+			%a.watch{ href: watch_movie_path(@movie) } 
+			%a.social{ href: community_movie_path(@movie) } 
 	
 
 	.line-left

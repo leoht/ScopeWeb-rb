@@ -35,20 +35,23 @@ a {
 	position: fixed; top: 0; left: 0;
 	background: #181b1e;
 	width: 100%;
+	height: 45px;
 
 
 	a {
-		color: white;
+		color: #5a5e64;
 		text-transform: uppercase;
 		margin: 0 8px 0 8px;
-		font-size: 14px;
+		font-size: 13px;
 		position: relative; bottom: 0px;
 		border-left: 1px solid white;
 		padding: 0 15px 0 15px;
 	}
 
+	a:hover { color: #fff; }
+
 	a.active {
-		border-bottom: 2px solid $scope_blue;
+		color: white;
 	}
 
 	a.blue { color: $scope_blue; }
@@ -62,10 +65,13 @@ a {
 		margin-right: 20px;	
 	}
 
+	.current.current-movies { width: 60px; height: 3px; background: $scope_blue; position: absolute; z-index: 20; left: 200px; bottom: 0; }
+	.current.current-find { width: 140px; height: 3px; background: $scope_blue; position: absolute; z-index: 20; left: 310px; bottom: 0; }
+
 	.nav-right {
 		float: right;
-		position: relative; top: 0px; right: 25px; padding: 18px 0 0 35px;
-		background: asset-url('navbar-profile.png') no-repeat left top;
+		position: relative; top: 0px; right: 25px; padding: 20px 35px 0 0;
+		background: asset-url('navbar-profile.png') no-repeat right top;
 		height: 28px;
 
 		a { border: none; color: $scope_blue; position: relative; bottom: 5px; font-size: 11px; }
@@ -73,7 +79,7 @@ a {
 
 	.nav-search {
 		display: inline;
-		position: relative; bottom: 1px; left: 25px;
+		position: relative; bottom: 3px; left: 25px;
 		
 
 		form { display: inline; }
@@ -85,13 +91,29 @@ a {
 			background-color: transparent;
 			
 			border: none;
-			border-bottom: 1px solid #fff;
+			border-bottom: 1px solid #5a5e64;
 			border-radius: 1px;
 			text-transform: uppercase;
 			padding: 4px 4px 4px 0;
-			color: white;
+			color: #5a5e64;
 			font-size: 11px;
-			outline: none
+			outline: none;
+			font-family: 'Aller', sans-serif;
+		}
+
+		::-webkit-input-placeholder{
+			color: #5a5e64;
+			font-family: 'Aller', sans-serif;
+		}
+
+		::-moz-placeholder {
+			color: #5a5e64;
+			font-family: 'Aller', sans-serif;
+		}
+
+		::-ms-input-placeholder {
+			color: #5a5e64;
+			font-family: 'Aller', sans-serif;
 		}
 
 		.submit { position: relative; top: 12px; }

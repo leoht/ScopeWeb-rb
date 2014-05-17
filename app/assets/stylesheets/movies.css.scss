@@ -11,18 +11,35 @@ $scope_blue: #04e5e8;
 .movie {
 	text-align: center;
 	text-transform: uppercase;
-	padding-top: 400px;
+	padding-top: 280px;
 	background: asset-url('movie-bg.png') no-repeat center -50px fixed, #000;
 	background-size: cover;
 	width: 100%; height: 100%;
 
-	.found { padding-top: 10px; font-weight: bold; font-size: 14px; }
+
+
+	.line-left {
+		position: absolute; top: 400px; height: 1px; background-color: #a5a8ac; width: 35%;
+	}
+	.line-right {
+		position: absolute; top: 400px; right: 300px; height: 1px; background-color: #a5a8ac; width: 22%;
+	}
+
+	.find-another {
+		color: $scope_blue; font-size: 11px; text-transform: uppercase;
+		position: absolute; right: 170px; top: 395px; font-weight: bold;
+		line-height: 14px; letter-spacing: 1px;
+		text-align: left;
+	}
+
+	.found { padding-top: 10px; font-weight: bold; font-size: 14px; color: #888; }
 
 	.movie-author, .movie-year {
-		font-size: 22px;
+		font-size: 25px;
 		width: 450px;
 		margin: auto;
 		font-family: 'Aller', sans-serif;
+		font-weight: bold;
 	}
 
 	.movie-scope {
@@ -33,10 +50,12 @@ $scope_blue: #04e5e8;
 	}
 
 	h1.movie-title {
-		font-size: 72px;
-		margin: 20px 0 0 0;
+		font-size: 56px;
+		margin: 40px 0 0 0;
 		color: #f0004e;
 	}
+
+	.movie-year { font-size: 15px; }
 
 
 	.movie-actions {
@@ -47,9 +66,11 @@ $scope_blue: #04e5e8;
 		.movie-more, .movie-watch {
 			width: 150px;
 			margin: 12px;
+			font-weight: bold;
 			display: inline-block;
 			font-size: 12px;
-			background: #13161b;
+			height: 10px;
+			padding-top: 6px;
 		}
 
 	}
@@ -143,10 +164,12 @@ div.movie-more {
 	display: none;
 	width: 100%;
 	background-color: #f9f8f8;
-
+	position: relative;
+	height: 2000px;
 	.synopsis {
+
 		width: 500px; margin: auto; height: 700px;
-		h2 { padding-top: 10px; color: #0cc4be; font-size: 27px; letter-spacing: 3px;}
+		h2 { padding-top: 10px; color: #888; font-size: 27px; letter-spacing: 1px;}
 		.content { height: 250px; text-transform: none; color: black; font-size: 14px; line-height: 20px; }
 	}
 
@@ -155,7 +178,7 @@ div.movie-more {
 		background: #000;
 	}
 
-	.discover-more { text-transform: uppercase; position: absolute; bottom: 20px; left: 0; width: 100%; }
+	.discover-more {  text-transform: uppercase; }
 	.discover-more a { color: black; } 
 }
 
@@ -195,8 +218,8 @@ div.movie-more {
 
 	h1 {
 		text-transform: uppercase;
-		margin-top: 10px;
-		font-size: 28px;
+		margin-top: 5px;
+		font-size: 20px;
 	}
 
 	.finder-subtitle { text-transform: uppercase; font-size: 14px; color: #888; }
@@ -205,7 +228,7 @@ div.movie-more {
 
 		text-align: center;
 		width: 900px;
-		margin: 70px auto 0 auto;
+		margin: 60px auto 0 auto;
 
 		.button-link {
 			cursor: pointer;
@@ -214,15 +237,15 @@ div.movie-more {
 			margin-right: 15px;
 			font-size: 14px;
 			text-transform: none;
-			height: 15px;
-			padding-top: 8px;
+			height: 12px;
+			padding-top: 4px;
 		}
 
 	}
 
 	.mood-line {
 		width: 100%;
-		position: absolute; top: 400px;
+		position: absolute; top: 300px; padding-top: 100px;
 
 		.line {
 			background: #636b75;
@@ -233,7 +256,7 @@ div.movie-more {
 		}
 
 		.line-elements {
-			width: 1050px;
+			width: 1120px;
 			margin: auto;
 			position: relative; bottom: 70px;
 		}
@@ -247,7 +270,7 @@ div.movie-more {
 			font-size: 14px;
 			float: left;
 			
-			margin-right: 70px;
+			margin-right: 80px;
 		}
 
 		#line-emotions { background: asset-url('mood-emotions.png') no-repeat center top, asset-url('finder-mood-ball.png') no-repeat center 65px; }
@@ -269,7 +292,7 @@ div.movie-more {
 		}
 
 		.circle-wrapper {
-			position: absolute; z-index: 0; top: 261px; left: 0;
+			position: absolute; z-index: 0; top: 242px; left: 0;
 			width: 100%;
 			.circle {
 				width: 316px; height: 316px;
@@ -285,7 +308,7 @@ div.movie-more {
 			width: 250px;
 			margin: auto;
 
-			.fact-title { color: #f0004e; font-size: 16px; text-transform: uppercase; padding-top: 15px; }
+			.fact-title { color: #f0004e; font-size: 14px; text-transform: uppercase; padding-top: 15px; }
 			.fact-text { color: black; padding: 5px 15px; font-size: 12px; }
 		}
 		
@@ -373,3 +396,28 @@ div.movie-more {
 	}
 }
 
+.scroll-slide {
+	width: 50%; position: fixed; z-index: 300;
+	height: 100%;
+	background: #888;
+}
+
+.scroll-slide-left-a {
+	left: 0;
+	top: -100%;
+}
+
+.scroll-slide-left-b {
+	left: 0;
+	top: -100%;
+}
+
+.scroll-slide-right-a {
+	right: 0;
+	bottom: -100%;
+}
+
+.scroll-slide-right-b {
+	right: 0;
+	bottom: -100%;
+}

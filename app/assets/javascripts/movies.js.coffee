@@ -25,13 +25,15 @@ $(document).ready ->
 
 	window.slideToMovieMore = () ->
 		$('.movie-found').animate {
-			paddingTop: '100px'
+			paddingTop: '140px'
 		}, 600, () ->
 			# document.location.href = NEXT_URL;
 
+		$('.line-left, .line-right, .find-another, .movie-found img, .movie-found .found').fadeOut 600
 		$('.movie-actions').fadeOut 600, () ->
 			$('.movie-more-nav').fadeIn 600
 			$('.movie-more-content').fadeIn 600
+			$('.movie-found').css 'overflow', 'auto'
 
 
 	
@@ -52,10 +54,10 @@ $(document).ready ->
 		spinCircle()
 		setTimeout () ->
 			$('.related-movies .poster-img').attr 'src', '/assets/samples/' + data.image
-		, 500
+		, 1000
 		setTimeout () ->
 			$('.movie-finder').css 'background-image', 'url(/assets/samples/' + data.image + '.jpg)'
-		, 1000
+		, 300
 
 	window.finderShiftMovie = (data) ->
 		ball = $('<div>')
@@ -92,11 +94,18 @@ $(document).ready ->
 
 		window.relatedFactCounter++
 
-		$('.movie-finder').css 'background-image', 'url(/assets/samples/' + data.image + '.jpg)'
+		
+		
 
-		$('.fact-img').attr 'src', '/assets/samples/' + data.image
-		$('.fact-title').text data.title
-		$('.fact-text').text data.text
+		spinCircle()
+		setTimeout () ->
+			$('.fact-img').attr 'src', '/assets/samples/' + data.image
+			$('.fact-title').text data.title
+			$('.fact-text').text data.text
+		, 1000
+		setTimeout () ->
+			$('.movie-finder').css 'background-image', 'url(/assets/samples/' + data.image + '.jpg)'
+		, 300
 
 	window.finderShiftFact = (data) ->
 		ball = $('<div>')
@@ -124,6 +133,14 @@ $(document).ready ->
 		setTimeout () ->
 			$('.circle').css 'transform', 'rotate(0deg)'
 		, 500
+
+	window.beginScrollSlide = (slide) ->
+		$('.scroll-slide-left-'+slide).animate {
+			top: '+=100%'
+		}, 800
+		$('.scroll-slide-right-'+slide).animate {
+			bottom: '+=100%'
+		}, 800
 
 	$('.synopsis').waypoint ->
 		if window.isMenuDisplayed

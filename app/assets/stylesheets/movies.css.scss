@@ -328,14 +328,16 @@ div.movie-more {
 			
 
 			div {
-				display: inline-block; cursor: pointer; width: 100px; height: 70px; padding-top: 70px; text-align: center; font-size: 12px;
+				margin-right: 55px; display: inline-block; cursor: pointer; width: 53px; height: 70px; padding-top: 70px; text-align: center; font-size: 12px;
 			}
+
+			.yes {  margin-right: 0px; background: asset-url('controls-sprite.png') no-repeat -52px top; }
+			.no {  background: asset-url('controls-sprite.png') no-repeat left top; }
+			.not-seen { background: asset-url('controls-sprite.png') no-repeat right top; }
+
 		}
 
-		.yes {  background: asset-url('finder-yes.png') no-repeat center top; }
-		.no {  background: asset-url('finder-no.png') no-repeat center top; }
-		.not-seen { background: asset-url('finder-refresh.png') no-repeat center top; }
-
+		
 		.line-yes { position: absolute; right: 0px; top: 400px; height: 1px; width: 37%; background: #636b75; }
 		.line-no { position: absolute; left: 0px; top: 400px; height: 1px; width: 37%; background: #636b75; }
 
@@ -400,27 +402,36 @@ div.movie-more {
 }
 
 .scroll-slide {
-	width: 50%; position: fixed; z-index: 300;
+	width: 50%; position: fixed; z-index: 140;
 	height: 100%;
 	background: #888;
+	background-size: cover;
 }
 
 .scroll-slide-left-a {
 	left: 0;
-	top: -100%;
+	top: -95%;
+	background: asset-url('scroll-slide-left-a.png') no-repeat;
+	background-size: cover;
 }
 
 .scroll-slide-left-b {
 	left: 0;
-	top: -100%;
+	top: -95%;
+	background: asset-url('scroll-slide-left-b.png') no-repeat;
+	background-size: cover;
 }
 
 .scroll-slide-right-a {
 	right: 0;
 	bottom: -100%;
+	background: asset-url('scroll-slide-right-a.png') no-repeat;
+	background-size: cover;
 }
 
 .scroll-slide-right-b {
 	right: 0;
 	bottom: -100%;
+	background: asset-url('scroll-slide-right-b.png') no-repeat;
+	background-size: cover;
 }

@@ -25,17 +25,18 @@ $(document).ready ->
 
 	window.slideToMovieMore = () ->
 		$('.movie-found').animate {
-			paddingTop: '140px'
+			paddingTop: '100px'
 		}, 600, () ->
 			# document.location.href = NEXT_URL;
 
-		$('.line-left, .line-right, .find-another, .movie-found img, .movie-found .found').fadeOut 600
+		$('.line-left, .line-right, .find-another ').fadeOut 600
+		$('.movie-found img, .movie-found .found').css 'visibility', 'hidden'
 		$('.movie-actions').fadeOut 600, () ->
 			$('.movie-more-nav').fadeIn 600
 			$('.movie-more-content').fadeIn 600
-			$('.movie-found').css 'overflow', 'auto'
+			# $('.movie-found').css 'overflow', 'auto'
 
-		$('.movie #trailer').waypoint ->
+		$('.discover-more').click () ->
 			if window.isMenuDisplayed
 				return
 

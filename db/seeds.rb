@@ -29,8 +29,8 @@ movie.related_movies  << RelatedMovie.create(title: 'Blade Runner', image: 'blad
 # Related facts
 
 movie.related_facts <<  MovieRelatedFact.create(title: 'Curiosity sur Mars', content: 'En août 2012, la NASA déploie la sonde Curiosity afin d’explorer le sol martien et d’ouvrir de nouveux horizons à la conquête spatiale.', photo: 'curiosity.png')
-movie.related_facts <<  MovieRelatedFact.create(title: 'Foxconn veut remplacer ses ouvriers par des robots', content: 'Le plus grand fabricant mondial de matériel informatique souhaite remplacer un million de ses employés en usine par des robots, afin d’améliorer sa productivité.', photo: 'foxconn.png')
-movie.related_facts <<  MovieRelatedFact.create(title: 'Google mise sur ses robots', content: 'Depuis quelques mois, le géant du web Google rachète de nombreuses entreprises spécialisées dans la robotique. La firme souhaite-t-elle se créer une “armée” de robots pour ses prochains projets ?', photo: 'google.png')
+movie.related_facts <<  MovieRelatedFact.create(title: 'Foxconn remplace ses ouvriers par des robots', content: 'Le plus grand fabricant mondial de matériel informatique remplace un million de ses employés en usine par des robots.', photo: 'foxconn.png')
+movie.related_facts <<  MovieRelatedFact.create(title: 'Google mise sur ses robots', content: 'Google rachète de nombreuses entreprises spécialisées dans la robotique. La firme souhaite-t-elle se créer une “armée” de robots ?', photo: 'google.png')
 
 # movie.chapters.create(number: 1, title: 'Enfer et Paradis', timecode: '60')
 # movie.chapters.create(number: 2, title: 'La Révélation', timecode: '572')

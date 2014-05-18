@@ -37,7 +37,14 @@ $(document).ready ->
 		$('.movie-actions').fadeOut 600, () ->
 			$('.movie-more-nav').fadeIn 600
 			$('.movie-more-content').fadeIn 600
+
 			# $('.movie-found').css 'overflow', 'auto'
+		$('.movie.movie-found').animate { backgroundPositionY: '-200' }, 600
+
+		$('.navbar .current-find').animate {
+			left: 200,
+			width: 65
+		}, 500
 
 		$('.discover-more').click () ->
 			if window.isMenuDisplayed
@@ -160,10 +167,14 @@ $(document).ready ->
 			bottom: '+=95%'
 		}, 800, () ->
 			window.isScrolling = false
-			
+
 		$('.notice-display').fadeOut 400
 		$('.notice-display-'+slide).fadeIn 600
-		$('.scroll-slide-next').fadeIn 600
+
+		if slide == 'b'
+			$('.scroll-slide-next').fadeOut 600
+		else
+			$('.scroll-slide-next').fadeIn 600
 
 	$('.scroll-slide-next').click ->
 		if window.currentScrollSlide == 'a'
@@ -182,23 +193,23 @@ $(document).ready ->
 
 	$('#mood-laugh').click ->
 		$(this).text ''
-		$('#line-laugh').fadeIn 400
+		$('#line-laugh').animate { opacity: 1 }, 400
 
 	$('#mood-scared').click ->
 		$(this).text ''
-		$('#line-scared').fadeIn 400
+		$('#line-scared').animate { opacity: 1 }, 400
 
 	$('#mood-escape').click ->
 		$(this).text ''
-		$('#line-escape').fadeIn 400
+		$('#line-escape').animate { opacity: 1 }, 400
 
 	$('#mood-action').click ->
 		$(this).text ''
-		$('#line-action').fadeIn 400
+		$('#line-action').animate { opacity: 1 }, 400
 
 	$('#mood-emotions').click ->
 		$(this).text ''
-		$('#line-emotions').fadeIn 400
+		$('#line-emotions').animate { opacity: 1 }, 400
 
 	$('#line-laugh').click ->
 		$(this).fadeOut 400
@@ -256,3 +267,15 @@ $(document).ready ->
 			window.slideAmount = 0
 
 		
+	$('.hidden-nav-title').click ->
+		$('.scroll-slide-left-a, .scroll-slide-left-b').animate {
+			top: '-100%'
+		}, 600
+		$('.scroll-slide-right-a, .scroll-slide-right-b').animate {
+			bottom: '-100%'
+		}, 600
+		$('.hidden-nav').animate {
+			top: '-=60px'
+		}, 500
+		$('.notice-display').fadeOut 300
+		window.currentScrollSlide = 'b'

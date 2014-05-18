@@ -156,6 +156,7 @@ div.movie-more {
 			text-transform: uppercase;
 			color: #fff;
 			font-size: 19px;
+			cursor: pointer;
 		}
 
 		.hidden-nav-wrapper {
@@ -270,12 +271,13 @@ div.movie-more {
 		.line-elements {
 			width: 1120px;
 			margin: auto;
-			position: relative; bottom: 70px;
+			position: relative; bottom: 70px; left: 30px;
+			text-align: center;
 		}
 
 		.line-element {
 			cursor: pointer;
-			display: none;
+			opacity: 0;
 			width: 140px; height: 80px;
 			
 			padding-top: 90px;
@@ -468,4 +470,40 @@ div.movie-more {
 	z-index: 145;
 	display: none;
 	cursor: pointer;
+}
+
+.related-bg {
+	width: 100%; height: 100%; position: absolute;
+}
+
+.related-bg.inglorious-bg {
+	background: asset-url('samples/inglorious.png.jpg');
+	background-size: cover;
+	z-index: -1;
+}
+
+.related-bg.element-bg {
+	background: asset-url('samples/5e-element.png.jpg');
+	background-size: cover;
+	z-index: -2;
+}
+.related-bg.blade-bg {
+	background: asset-url('samples/blade.png.jpg');
+	background-size: cover;
+	z-index: -3;
+}
+.related-bg.curiosity-bg {
+	background: asset-url('samples/curiosity.png.jpg');
+	background-size: cover;
+	z-index: -4;
+}
+.related-bg.foxconn-bg {
+	background: asset-url('samples/foxconn.png.jpg');
+	background-size: cover;
+	z-index: -5;
+}
+.related-bg.google-bg {
+	background: asset-url('samples/google.png.jpg');
+	background-size: cover;
+	z-index: -6;
 }

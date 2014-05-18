@@ -6,6 +6,7 @@ window.isMenuDisplayed = false
 window.relatedMovieCounter = 0;
 window.relatedFactCounter = 0;
 window.step = 1
+window.currentScrollSlide = 'a'
 
 $(document).ready ->
 
@@ -155,7 +156,11 @@ $(document).ready ->
 		}, 800
 		$('.notice-display').fadeOut 400
 		$('.notice-display-'+slide).fadeIn 600
+		$('.scroll-slide-next').fadeIn 600
 
+	$('.scroll-slide-next').click ->
+		window.currentScrollSlide = window.currentScrollSlide == 'a' ? 'b' : 'a'
+		beginScrollSlide(window.currentScrollSlide)
 	
 	$('.mood-buttons .button-link').click ->
 		percent = Number window.percent + 5

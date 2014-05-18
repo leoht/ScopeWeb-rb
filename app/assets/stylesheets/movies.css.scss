@@ -32,14 +32,13 @@ $scope_blue: #04e5e8;
 		text-align: left;
 	}
 
-	.found { padding-top: 10px; font-weight: bold; font-size: 14px; color: #888; }
+	.found { padding-top: 10px; font-family: 'Aller-Bd'; font-size: 14px; color: #888; }
 
 	.movie-author, .movie-year {
 		font-size: 25px;
 		width: 450px;
 		margin: auto;
-		font-family: 'Aller', sans-serif;
-		font-weight: bold;
+		font-family: 'Aller-Bd', sans-serif;
 	}
 
 	.movie-scope {
@@ -455,7 +454,8 @@ div.movie-more {
 	width: 100%;
 	height: 80px;
 	background: asset-url('scroll-next.png') no-repeat center;
-	position: fixed; top: 70%; left: 0;
+	position: fixed; bottom: 50px; left: 0;
 	z-index: 145;
 	display: none;
+	cursor: pointer;
 }

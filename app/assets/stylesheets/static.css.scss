@@ -18,6 +18,10 @@ body { overflow: auto; }
 .prez {
 	width: 100%; height: 100%;
 	overflow: auto;
+
+	header {
+		cursor: pointer;
+	}
 }
 
 .home {
@@ -33,13 +37,13 @@ body { overflow: auto; }
 
 	.home-bottom {
 		width: 100%; height: 230px;
-		background: #181b1e asset-url('page-layout-bottom.png') repeat-x center 105px;
+		background: #181b1e asset-url('page-layout-bottom.png') repeat-x center 95px;
 		position: absolute; bottom: 0;
 
 		.home-actions {
 			background:  #181b1e;
 			width: 750px;
-			margin-top: 100px;
+			margin-top: 90px;
 		}
 	}
 
@@ -56,7 +60,7 @@ body { overflow: auto; }
 		@extend .home-title;
 		margin-top: 0px;
 		font-size: 14px;
-		color: #7a7c83;
+		color: #fff;
 		
 		text-transform: uppercase;
 	}
@@ -103,5 +107,11 @@ body { overflow: auto; }
 		display: block; margin-bottom: 10px; text-transform: none;
 
 		a { color: white; }
+	}
+
+	.go-prez {
+		width: 100px; height: 80px;
+		background: asset-url('scroll-next.png') no-repeat center;
+		margin: 20px auto; cursor: pointer;
 	}
 }

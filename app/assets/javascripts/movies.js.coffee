@@ -46,6 +46,7 @@ $(document).ready ->
 			$('.hidden-nav').animate {
 				top: '+=60px'
 			}, 500
+			beginScrollSlide(window.currentScrollSlide)
 
 
 
@@ -159,7 +160,11 @@ $(document).ready ->
 		$('.scroll-slide-next').fadeIn 600
 
 	$('.scroll-slide-next').click ->
-		window.currentScrollSlide = window.currentScrollSlide == 'a' ? 'b' : 'a'
+		if window.currentScrollSlide == 'a'
+			window.currentScrollSlide = 'b'
+		else
+			window.currentScrollSlide = 'a'
+
 		beginScrollSlide(window.currentScrollSlide)
 	
 	$('.mood-buttons .button-link').click ->
@@ -210,3 +215,11 @@ $(document).ready ->
 		$('#mood-emotions').text 'D\'émotions'
 
 	$.preloadCssImages()
+
+	# preload finder backgrounds...
+
+	image = new Image()
+	bgArray = ['5e-element.png.jpg', 'blade.png.jpg', 'curiosity.png.jpg', 'foxconn.png.jpg', 'google.png.jpg', 'inglorious.png.jpg']
+
+	for i in [0..bgArray.length-1]
+		image.src = '/assets/samples/'+bgArray[i]

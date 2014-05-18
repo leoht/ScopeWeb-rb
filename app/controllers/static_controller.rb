@@ -10,7 +10,6 @@ class StaticController < ApplicationController
 	render 'static/home', layout: 'home'
   end
 
-  def about
-
+  def application
   end
 end

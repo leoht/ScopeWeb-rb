@@ -3,7 +3,12 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ () ->
-	$('.go-prez').click (e) ->
+	$('.go-prez').click ->
 		$('.home').animate {
 			top: '-=100%'
+		}, 600
+
+	$('.prez header').click ->
+		$('.home').animate {
+			top: '+=100%'
 		}, 600

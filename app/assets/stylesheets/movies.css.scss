@@ -151,6 +151,13 @@ div.movie-more {
 		top: 0px;
 		padding-top: 10px;
 
+		.hidden-nav-title {
+			position: absolute;  left: 30px; top: 18px;
+			text-transform: uppercase;
+			color: #fff;
+			font-size: 19px;
+		}
+
 		.hidden-nav-wrapper {
 			width: 600px;
 			margin: auto;
@@ -180,8 +187,11 @@ div.movie-more {
 		background: #000;
 	}
 
-	.discover-more {  text-transform: uppercase; }
-	.discover-more a { color: black; } 
+	.discover-more {
+		width: 100px; height: 80px;
+		background: asset-url('/assets/discover-more.png') no-repeat center;
+		margin: 20px auto; cursor: pointer;
+	}
 }
 
 /****************************

@@ -6,7 +6,9 @@ window.isMenuDisplayed = false
 window.relatedMovieCounter = 0;
 window.relatedFactCounter = 0;
 window.step = 1
-window.currentScrollSlide = 'a'
+window.currentScrollSlide = 'b'
+window.slideAmount = 0
+window.isScrolling = false
 
 $(document).ready ->
 
@@ -46,6 +48,7 @@ $(document).ready ->
 			$('.hidden-nav').animate {
 				top: '+=60px'
 			}, 500
+			window.currentScrollSlide = 'a'
 			beginScrollSlide(window.currentScrollSlide)
 
 
@@ -149,12 +152,15 @@ $(document).ready ->
 		, 500
 
 	window.beginScrollSlide = (slide) ->
+		window.isScrolling = true
 		$('.scroll-slide-left-'+slide).animate {
 			top: '+=100%'
 		}, 800
 		$('.scroll-slide-right-'+slide).animate {
 			bottom: '+=95%'
-		}, 800
+		}, 800, () ->
+			window.isScrolling = false
+			
 		$('.notice-display').fadeOut 400
 		$('.notice-display-'+slide).fadeIn 600
 		$('.scroll-slide-next').fadeIn 600
@@ -223,3 +229,30 @@ $(document).ready ->
 
 	for i in [0..bgArray.length-1]
 		image.src = '/assets/samples/'+bgArray[i]
+
+
+
+	$('.movie-found').on 'mousewheel', (e) ->
+
+		if window.isScrolling
+			return
+
+		# console.log e.originalEvent.deltaY
+		window.slideAmount += e.originalEvent.deltaY
+
+		if window.slideAmount > 100
+			$('.discover-more').click()
+			window.slideAmount = 0
+
+	$('.scroll-slide').on 'mousewheel', (e) ->
+		if window.isScrolling
+			return
+
+		# console.log e.originalEvent.deltaY
+		window.slideAmount += e.originalEvent.deltaY
+
+		if window.slideAmount > 100
+			$('.scroll-slide-next').click()
+			window.slideAmount = 0
+
+		

@@ -2,6 +2,7 @@
 
 $scope_blue: #04e5e8;
 
+
 body, html {
 	margin: 0;
 	overflow-x: hidden;
@@ -79,7 +80,7 @@ a {
 
 	.nav-search {
 		display: inline;
-		position: relative; bottom: 3px; left: 25px;
+		position: relative; bottom: 2px; left: 25px;
 		
 
 		form { display: inline; }
@@ -94,8 +95,8 @@ a {
 			border-bottom: 1px solid #5a5e64;
 			border-radius: 1px;
 			text-transform: uppercase;
-			padding: 4px 4px 4px 0;
-			color: #5a5e64;
+			padding: 4px 4px 0px 0;
+			color: #fff;
 			font-size: 11px;
 			outline: none;
 			font-family: 'Aller', sans-serif;
@@ -116,7 +117,7 @@ a {
 			font-family: 'Aller', sans-serif;
 		}
 
-		.submit { position: relative; top: 12px; }
+		.submit { position: relative; top: 9px; }
 	}
 }
 

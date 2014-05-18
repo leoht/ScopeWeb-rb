@@ -13,6 +13,13 @@ body, html {
 	padding: 0; margin: 0;
 }
 
+body { overflow: auto; }
+
+.prez {
+	width: 100%; height: 100%;
+	overflow: auto;
+}
+
 .home {
 	width: 100%; height: 100%;
 	position: absolute; top: 0;
@@ -58,21 +65,27 @@ body, html {
 		width: 600px;  margin: 20px auto 0 auto; font-size: 14px; line-height: 22px; text-align: center;
 	}
 
+	.login-form {
+		width: 160px; height: 180px;
+		background: #4b4b4b;
+		border-radius: 4px;
+		padding: 25px 15px 0 15px;
+	}
+
 	.home-actions {
 		text-transform: uppercase;
-		width: 800px;
-		margin: 10% auto 0 auto;
+		margin: 8% auto 0 auto;
 		text-align: center;
 
 		a#sign_in {
-			font-size: 14px;
-			padding: 6px 14px 8px 14px;
-			background: $scope_blue;
-			color: black;
+			font-size: 9.5px;
+			padding: 6px 14px 6px 14px;
+			border: 1px solid $scope_blue;
+			color: #fff;
 			display: block;
-			margin: 20px auto;
-			width: 260px; 
-			font-family: 'Aller-Bd', sans-serif;
+			margin: 40px auto;
+			width: 130px; 
+			font-family: 'Aller', sans-serif;
 		}
 	}
 

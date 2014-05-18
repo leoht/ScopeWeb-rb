@@ -1,0 +1,126 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+
+body{
+	background:black;
+	text-align:center;
+}
+
+
+header{
+	background:url(../img/logo.jpg) center center no-repeat ;
+	background-color:#181b1e;
+	height:70px;
+	width:100%;
+	padding-top:20px;
+	box-shadow: 0px 2px 2px #000; 
+}
+.contener{
+margin-top:0;
+height: 4744px;
+background:url(../img/background.jpg) center center no-repeat ;	
+background-color:black; 
+margin:auto;
+
+}
+
+
+
+
+h1{
+	font-family: "aller_light";
+	font-size:14px;
+	color:#e7e7e7;
+
+}
+
+h2{
+	color:#797a7b;
+	font-family: "aller_it";
+	font-size:14px;
+
+}
+
+section{
+	width:400px;
+	margin:auto;
+}
+
+.picto{
+	width:50px;
+	height:50px;
+	margin:auto;
+}
+
+#trailler{
+	width:auto;
+	padding-top:10px;
+}
+
+#trailler h1{
+	margin-bottom:35px;
+	margin-top:30px;
+}
+
+#concept{
+	margin-top:290px;
+
+
+}
+
+#notification{
+	margin-top:540px;
+	
+}
+
+#notice{
+	margin-top:420px;
+	width:400px;
+	text-align:left;
+	padding-left:30%;
+}
+
+
+
+#documentation{
+	margin-top:600px;
+	width:400px;
+	padding-right:30%;
+}
+
+#interface{
+	margin-top:310px;
+	
+}
+
+#equipe{
+	margin-top:770px;
+	width:880px;
+	background:red;
+	text-align:center;
+	}
+
+.beaugoss{
+
+	width:440px;
+	float:left;
+}
+
+
+.beaugoss h1, .beaugoss h2{
+margin:auto; width:200px;}
+
+.clear{
+	clear:both;
+}
+
+#thank{
+	width:880px;margin-top:120px;
+}
+	
+	
+
+

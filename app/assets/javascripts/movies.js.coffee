@@ -10,7 +10,7 @@ window.step = 1
 $(document).ready ->
 
 	window.slideNext = () ->
-		$('.finder, .movie-found').animate { left: '-=120%' }, 700
+		$('.finder, .movie-found').animate { left: '-=100%' }, 700
 		percent = Number window.percent + 30
 		$('.finder-progression .progress-bar').css 'width', percent+'%'
 		$('.progress-percent').css 'left', percent+'%'
@@ -151,8 +151,10 @@ $(document).ready ->
 			top: '+=100%'
 		}, 800
 		$('.scroll-slide-right-'+slide).animate {
-			bottom: '+=100%'
+			bottom: '+=95%'
 		}, 800
+		$('.notice-display').fadeOut 400
+		$('.notice-display-'+slide).fadeIn 600
 
 	
 	$('.mood-buttons .button-link').click ->

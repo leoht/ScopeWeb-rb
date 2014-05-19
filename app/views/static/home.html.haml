@@ -12,7 +12,7 @@
 		- if not current_user
 			%img{ src: image_path('/assets/profile.png') }
 			%span.home-username
-			%a{ href: '/auth/facebook', id: 'sign_in', class: 'blue' }
+			%a{ href: '/auth/facebook', id: 'sign_in', class: 'blue button' }
 				Inscription rapide
 		- else
 			%img{ src: image_path('/assets/profile-picture-mask.png'), style: "background-image: url(http://graph.facebook.com/#{current_user.uid}/picture?type=normal); background-position: center;" }
@@ -48,7 +48,7 @@
 		.picto
 			%img{src: "assets/concept.png"}
 		%h1 UN SYSTÈME DE DOUBLE ÉCRAN
-		%h2 Une interface web pour regarder le film,et une application mobile pour créer l’interactivité.Lorsqu’une icône apparait sur l’écran du film,une interaction à lieu sur l’application mobile.
+		%h2 Une interface web pour regarder le film, et une application mobile pour créer l’interactivité. Lorsqu’une icône apparait sur l’écran du film, une interaction a lieu sur l’application mobile.
 	%section#notification
 		.picto
 			%img{src: "assets/notif.png"}
@@ -72,7 +72,7 @@
 			%br> • 1 symbole qui donne le genre
 			%br> • 1 message concis, à l’image d’un tweet
 			%br> • 1 illustration
-			%br> • 1vers la documentation complète
+			%br> • 1 lien vers la documentation complète
 	%section#documentation
 		.picto
 			%img{src: "assets/doc.png"}
@@ -84,7 +84,7 @@
 			Retrouvez la avant, pendant et après le film.
 	%section#interface
 		%h1 UNE INTERFACE SIMPLE ET INTUITIVE
-		%h2 Pour saisir les informations rapidement Et obtenir efficacement des réponses à ses questions, tout en restant accroché au film
+		%h2 Pour saisir les informations rapidement et obtenir efficacement des réponses à ses questions, tout en restant accroché au film
 	%section#equipe
 		.beaugoss
 			%h1 Léonard Hetsch
@@ -99,8 +99,8 @@
 	.clear
 
 	%section#thank
-		%h1 REMERCIEMENT
+		%h1 REMERCIEMENTS
 		%h2
-			MAZILU Léna, MENIA Thomas, FICARA Véronique, AUDOUX Thierry et NYEKI Catherine
+			MAZILU Léna, MENIA Thomas, FICARA Véronique, AUDOUX Thierry, BLANCHET Jonathan et NYEKI Catherine
 
 	.clear

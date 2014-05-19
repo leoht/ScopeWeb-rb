@@ -1,16 +1,14 @@
 .container.home
-	.home-top
-		%h1.home-title.with-font
-			%a{ href: root_path }
-				SC
-				%span.blue> 0
-				PE
+	/ .home-top
+	/ 	%h1.home-title.with-font
+	/ 		%a{ href: root_path }
+	/ 			SC
+	/ 			%span.blue> 0
+	/ 			PE
 
-		%h3.home-subtitle L'oeil ouvert sur le monde
+	/ 	%h3.home-subtitle L'oeil ouvert sur le monde
 
-	/ %p.home-intro Scope est un site de visionnage de films en streaming proposant d’augmenter l’expérience du 7ème art en synchronisant l’interface web et les supports mobiles, via l’application SCOPE.
-
-	.home-actions.login-form
+	.login-form
 		- if not current_user
 			%img{ src: image_path('/assets/profile.png') }
 			%span.home-username
@@ -24,6 +22,11 @@
 					= current_user.name
 			%a{ href: signout_path, id: 'sign_out', class: 'blue' }
 				Déconnexion
+
+	.home-logo
+
+	/ %p.home-intro Scope est un site de visionnage de films en streaming proposant d’augmenter l’expérience du 7ème art en synchronisant l’interface web et les supports mobiles, via l’application SCOPE.
+
 
 	.home-bottom	
 		.home-actions

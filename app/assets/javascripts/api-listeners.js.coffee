@@ -1,5 +1,6 @@
 window.api = new Api
 window.currentChapter = 1
+window.lastNoticeTimecode = -99
 
 api.on ASSOCIATION_INITIATED_WITH_CODE, (data) ->
 	console.log 'Received code :' + data.code
@@ -36,6 +37,11 @@ api.on NEXT_CHAPTER, (data) ->
 	mediaPlayer.currentTime = CHAPTERS[window.currentChapter]
 
 api.on NOTICE, (data) ->
+
+	if (data.timecode - window.lastNoticeTimecode) < 60
+		return
+
+	window.lastNoticeTimecode = data.timecode
 	$('.notice-flash-'+data.category_nicename).fadeIn 400
 	setTimeout ->
 		$('.notice-flash').fadeOut 400

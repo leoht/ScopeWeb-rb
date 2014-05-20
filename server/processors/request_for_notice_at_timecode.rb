@@ -16,7 +16,7 @@ module Scope
 
           end_timecode = notice.end_timecode ? notice.end_timecode : notice.timecode.to_i + 30
 
-          answer.data = { :timecode => message.get('timecode').to_s, :end_timecode => end_timecode, :id => notice.id.to_s, :title => notice.title, :short_content => notice.short_content, :color => category.color, :category_nicename => category.parent.nicename }
+          answer.data = { :timecode => message.get('timecode').to_s, :end_timecode => end_timecode, :id => notice.id.to_s, :title => notice.title, :short_content => notice.short_content, :color => category.color, :category_nicename => category.parent.nicename, :category_title => category.title }
           puts " [x] Sending notice for timecode : " + message.get('timecode').to_s
           puts answer.data.inspect
 

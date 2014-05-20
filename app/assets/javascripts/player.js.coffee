@@ -64,3 +64,7 @@ window.toggleFastRewind = ->
 	api.send 'api.movie.toggle_rewind'
 
 	window.isFastRewinding = ! window.isFastRewinding
+
+$ () ->
+	$('.app-overlay .close').click ->
+		$('.app-overlay').fadeOut 500

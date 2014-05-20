@@ -1,3 +1,19 @@
+.app-overlay
+    .close
+
+    .info
+        .sync-picto
+        .title.with-font Synchronisation
+        .text Synchronisez le lecteur web avec votre tablette ou smartphone via l'application SCOPE.
+
+        .appstore-link
+            %img{ src: '/assets/appstore.png' }
+
+        - if current_user
+            .text.text-facebook Identifiez vous avec Facebook sur l'application pour synchroniser votre appareil mobile avec le film.
+        - else
+
+
 .player-wrapper
     %video.player#player(controls)
         %source{ src: "/medias/film.m4v" , type: 'video/mp4' }

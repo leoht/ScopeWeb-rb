@@ -13,6 +13,8 @@ api.on ASSOCIATED_WITH_TOKEN, (data) ->
 		duration: window.mediaPlayer.duration
 	}
 
+	$('.app-overlay').fadeOut(500)
+
 api.on PLAY, (data) ->
 	togglePlayPause()
 

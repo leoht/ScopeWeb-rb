@@ -27,7 +27,7 @@ $scope_blue: #04e5e8;
 
 	.find-another {
 		color: $scope_blue; font-size: 11px; text-transform: uppercase;
-		position: absolute; right: 170px; top: 395px; font-weight: bold;
+		position: absolute; right: 150px; top: 395px; font-weight: bold;
 		line-height: 14px; letter-spacing: 1px;
 		text-align: left;
 	}
@@ -506,4 +506,24 @@ div.movie-more {
 	background: asset-url('samples/google.png.jpg');
 	background-size: cover;
 	z-index: -6;
+}
+.little-ball-a {
+	width: 4px; height: 4px;
+	background: #f6f6f6;
+	border-radius: 10px;
+	position: absolute; top: 398.5px; left: 100px; z-index: 30;
+}
+
+.little-ball-b {
+	width: 4px; height: 4px;
+	background: #f6f6f6;
+	border-radius: 10px;
+	position: absolute; top: 398.5px; left: 37%; z-index: 30;
+}
+
+.little-ball-c {
+	width: 4px; height: 4px;
+	background: #f6f6f6;
+	border-radius: 10px;
+	position: absolute; top: 398.5px; right: 37%; z-index: 30;
 }

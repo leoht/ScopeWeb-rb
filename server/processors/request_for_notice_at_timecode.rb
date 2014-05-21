@@ -4,7 +4,7 @@ module Scope
   module Processor
   	class RequestForNoticeAtTimecode
   	  def self.process(message)
-  	  	notice = ::Notice.where('movie_id = ? and timecode = ?', message.get('movie_id').to_s, message.get('timecode').to_s).first
+  	  	notice = ::Notice.where('movie_id = ? and timecode = ? and id != ?', message.get('movie_id').to_s, message.get('timecode').to_s, '7').first
 
         if notice.kind_of? ::Notice
 

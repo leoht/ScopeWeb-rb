@@ -258,7 +258,7 @@ div.movie-more {
 
 	.mood-line {
 		width: 100%;
-		position: absolute; top: 300px; padding-top: 100px;
+		position: absolute; top: 37%; padding-top: 100px;
 
 		.line {
 			background: #636b75;
@@ -349,8 +349,8 @@ div.movie-more {
 		}
 
 		
-		.line-yes { position: absolute; right: 0px; top: 400px; height: 1px; width: 37%; background: #636b75; }
-		.line-no { position: absolute; left: 0px; top: 400px; height: 1px; width: 37%; background: #636b75; }
+		.line-yes { position: absolute; right: 0px; top: calc(37% + 100px); height: 1px; width: 37%; background: #636b75; }
+		.line-no { position: absolute; left: 0px; top: calc(37% + 100px); height: 1px; width: 37%; background: #636b75; }
 
 
 	}
@@ -511,21 +511,21 @@ div.movie-more {
 	width: 4px; height: 4px;
 	background: #f6f6f6;
 	border-radius: 10px;
-	position: absolute; top: 398.5px; left: 100px; z-index: 30;
+	position: absolute; top: calc(37% + 100px); left: 100px; z-index: 30;
 }
 
 .little-ball-b {
 	width: 4px; height: 4px;
 	background: #f6f6f6;
 	border-radius: 10px;
-	position: absolute; top: 398.5px; left: 37%; z-index: 30;
+	position: absolute; top: calc(37% + 100px); left: 37%; z-index: 30;
 }
 
 .little-ball-c {
 	width: 4px; height: 4px;
 	background: #f6f6f6;
 	border-radius: 10px;
-	position: absolute; top: 398.5px; right: 37%; z-index: 30;
+	position: absolute; top: calc(37% + 100px); right: 37%; z-index: 30;
 }
 
 

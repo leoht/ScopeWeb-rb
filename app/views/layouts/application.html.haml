@@ -14,11 +14,13 @@
 				%span.blue> 0
 				PE
 
-			= link_to 'Les films', :movies
+			= link_to 'Les films', :movies, :class => 'active'
 
-			= link_to 'On trouve pour vous', :find_movies, class: 'blue'
+			= link_to 'On trouve pour vous', :find_movies
 
 			= link_to "L'Application", nil
+
+			.current.current-movies
 
 			.nav-search
 				%form.search-form{ action: search_movies_path, method: :get }

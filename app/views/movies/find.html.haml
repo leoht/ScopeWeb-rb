@@ -33,7 +33,7 @@
 
 		.little-ball-b
 		.little-ball-c
-		
+
 		.related-facts
 			.fact
 				.image
@@ -192,3 +192,13 @@
 .notice-display.notice-display-b
 
 .scroll-slide-next
+.overlay
+
+- if request and request.params['skip']
+	:javascript
+		$('.movie-finder').hide(0)
+		
+		$(function () {
+			$('.movie-found').css('left', 0)
+			slideToMovieMore();
+		});

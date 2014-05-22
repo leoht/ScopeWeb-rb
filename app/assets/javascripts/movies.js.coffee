@@ -42,7 +42,7 @@ $(document).ready ->
 		$('.movie.movie-found').animate { backgroundPositionY: '-200' }, 600
 
 		$('.navbar .current-find').animate {
-			left: 200,
+			left: 210,
 			width: 65
 		}, 500
 
@@ -108,8 +108,11 @@ $(document).ready ->
 
 		spinCircle()
 		setTimeout () ->
-			$('.related-movies .poster-img').attr 'src', '/assets/samples/' + data.image
-		, 1000
+			$('.related-movies .poster-img').animate { opacity: 0 }, 200, ->
+				$('.related-movies .poster-img').attr 'src', '/assets/samples/' + data.image
+				$('.related-movies .poster-img').animate { opacity: 1 }, 200
+
+		, 800
 		setTimeout () ->
 			$('.movie-finder').css 'background-image', 'url(/assets/samples/' + data.image + '.jpg)'
 		, 300
@@ -154,10 +157,12 @@ $(document).ready ->
 
 		spinCircle()
 		setTimeout () ->
-			$('.fact-img').attr 'src', '/assets/samples/' + data.image
-			$('.fact-title').text data.title
-			$('.fact-text').text data.text
-		, 1000
+			$('.related-facts .fact').animate { opacity: 0 }, 200, ->
+				$('.fact-img').attr 'src', '/assets/samples/' + data.image
+				$('.fact-title').text data.title
+				$('.fact-text').text data.text
+				$('.related-facts .fact').animate { opacity: 1 }, 200
+		, 800
 		setTimeout () ->
 			$('.movie-finder').css 'background-image', 'url(/assets/samples/' + data.image + '.jpg)'
 		, 300

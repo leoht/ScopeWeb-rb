@@ -15,6 +15,7 @@ a {
 
 .with-font {
 	font-family: 'TwoFaced', sans-serif;
+	-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 }
 
 .blue {
@@ -45,8 +46,9 @@ a {
 		margin: 0 8px 0 8px;
 		font-size: 13px;
 		position: relative; bottom: 0px;
-		border-left: 1px solid white;
-		padding: 0 15px 0 15px;
+		border-left: 1px solid #eaeaea;
+		padding: 0 12px 0 25px;
+		transition: color 400ms linear;
 	}
 
 	a:hover { color: #fff; }
@@ -55,27 +57,39 @@ a {
 		color: white;
 	}
 
+	a:nth-child(2) {
+		background: asset-url('nav-movies-arrow.png') no-repeat right 50%;
+		padding-right: 20px;
+	}
+
+	a:nth-child(4) {
+		border-right: 1px solid #eaeaea;
+	}
+
 	a.blue { color: $scope_blue; }
 	
 	a.nav-scope {
-		bottom: 0;
+		letter-spacing: 1.5px;
+		bottom: -4px;
 		color: white;
 		font-size: 30px;
 		padding-left: 20px;
 		border-left: 0px;
 		margin-right: 20px;	
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 	}
 
-	.current.current-movies { width: 60px; height: 3px; background: $scope_blue; position: absolute; z-index: 20; left: 200px; bottom: 0; }
-	.current.current-find { width: 140px; height: 3px; background: $scope_blue; position: absolute; z-index: 20; left: 310px; bottom: 0; }
+	.current.current-movies { width: 60px; height: 3px; background: $scope_blue; position: absolute; z-index: 20; left: 218px; bottom: 0; }
+	.current.current-find { width: 140px; height: 3px; background: $scope_blue; position: absolute; z-index: 20; left: 340px; bottom: 0; }
 
 	.nav-right {
 		float: right;
-		position: relative; top: 0px; right: 25px; padding: 20px 35px 0 0;
+		position: relative; top: 0px; right: 35px; padding: 20px 35px 0 0;
 		background: asset-url('navbar-profile.png') no-repeat right top;
 		height: 28px;
 
-		a { border: none; color: $scope_blue; position: relative; bottom: 5px; font-size: 11px; }
+		a { border: none; color: $scope_blue; position: relative; bottom: 5px; font-size: 13px; }
 	}
 
 	.nav-search {
@@ -86,7 +100,7 @@ a {
 		form { display: inline; }
 
 		input {
-			height: 20px;
+			height: 16px;
 			width: 220px;
 
 			background-color: transparent;
@@ -97,7 +111,7 @@ a {
 			text-transform: uppercase;
 			padding: 4px 4px 0px 0;
 			color: #fff;
-			font-size: 11px;
+			font-size: 12px;
 			outline: none;
 			font-family: 'Aller', sans-serif;
 		}
@@ -117,7 +131,7 @@ a {
 			font-family: 'Aller', sans-serif;
 		}
 
-		.submit { position: relative; top: 9px; }
+		.submit { position: relative; top: 8px; }
 	}
 }
 

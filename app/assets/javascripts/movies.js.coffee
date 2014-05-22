@@ -42,7 +42,7 @@ $(document).ready ->
 		$('.movie.movie-found').animate { backgroundPositionY: '-200' }, 600
 
 		$('.navbar .current-find').animate {
-			left: 210,
+			left: 215,
 			width: 65
 		}, 500
 
@@ -74,7 +74,7 @@ $(document).ready ->
 		$('.movie.movie-found').animate { backgroundPositionY: '-200' }, 0
 
 		$('.navbar .current-find').animate {
-			left: 200,
+			left: 215,
 			width: 65
 		}, 0
 

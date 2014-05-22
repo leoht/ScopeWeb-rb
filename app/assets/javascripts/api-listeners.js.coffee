@@ -40,7 +40,7 @@ api.on NEXT_CHAPTER, (data) ->
 
 api.on NOTICE, (data) ->
 
-	if (data.timecode - window.lastNoticeTimecode) < 60
+	if (data.timecode - window.lastNoticeTimecode) < 70
 		return
 
 	window.lastNoticeTimecode = data.timecode

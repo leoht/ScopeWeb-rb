@@ -53,3 +53,6 @@ gem 'omniauth-facebook', '~> 1.4.1'
 
 # OpenGraph
 gem 'fb_graph'
+
+# Websocket server
+gem 'em-websocket'

@@ -58,6 +58,37 @@ $(document).ready ->
 			window.currentScrollSlide = 'a'
 			beginScrollSlide(window.currentScrollSlide)
 
+	window.skipToMovieMore = () ->
+		$('.movie-found').animate {
+			paddingTop: '100px'
+		}, 0, () ->
+			# document.location.href = NEXT_URL;
+
+		$('.line-left, .line-right, .find-another ').fadeOut 0
+		$('.movie-found img, .movie-found .found').css 'visibility', 'hidden'
+		$('.movie-actions').fadeOut 0, () ->
+			$('.movie-more-nav').fadeIn 0
+			$('.movie-more-content').fadeIn 0
+
+			# $('.movie-found').css 'overflow', 'auto'
+		$('.movie.movie-found').animate { backgroundPositionY: '-200' }, 0
+
+		$('.navbar .current-find').animate {
+			left: 200,
+			width: 65
+		}, 0
+
+		$('.discover-more').click () ->
+			if window.isMenuDisplayed
+				return
+
+			window.isMenuDisplayed = true
+
+			$('.hidden-nav').animate {
+				top: '+=60px'
+			}, 500
+			window.currentScrollSlide = 'a'
+			beginScrollSlide(window.currentScrollSlide)
 
 
 	

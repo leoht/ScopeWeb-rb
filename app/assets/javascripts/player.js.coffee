@@ -1,6 +1,7 @@
 window.isFastForwarding = false
 window.isFastRewinding  = false
 window.mediaPlayer = null
+window.justHiddedProgression = false
 
 window.initializeMediaPlayer = ->
 	window.mediaPlayer = document.getElementById 'player'
@@ -43,6 +44,24 @@ window.initializeMediaPlayer = ->
 
 	$('.progression-wrapper').mouseout (e) ->
 		$('.progression-tooltip').hide()
+
+	$(window).mousemove (e) ->
+		top = e.pageY
+		if window.innerHeight - top < 20 and not window.justHiddedProgression
+			# console.log 'test'
+			$('.progression-wrapper').animate {
+				bottom: 0
+			}, 200
+	
+	$('.progression-wrapper').mouseout ->
+		window.justHiddedProgression = true
+		$('.progression-wrapper').animate {
+			bottom: '-12px'
+		}, 200
+		setTimeout ->
+			window.justHiddedProgression = false
+		, 1000
+		
 
 
 window.togglePlayPause = ->

@@ -84,7 +84,7 @@ body { overflow: auto; }
 		padding: 25px 15px 0 15px;
 		border: 1px solid #2f2c2c;
 
-		a#sign_in {
+		a#sign_in, a#sign_out {
 			font-size: 9.5px;
 			padding: 6px 14px 6px 14px;
 			border: 1px solid $scope_blue;
@@ -94,6 +94,10 @@ body { overflow: auto; }
 			width: 100px; 
 			font-family: 'Aller', sans-serif;
 			text-transform: uppercase;
+		}
+
+		a#sign_out {
+			margin-top: 10px;
 		}
 	}
 
@@ -115,7 +119,7 @@ body { overflow: auto; }
 	}
 
 	.home-username {
-		color: white; font-family: 11px;
+		color: white; font-size: 12px;
 		display: block; margin-bottom: 10px; text-transform: none;
 
 		a { color: white; }

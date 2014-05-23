@@ -195,7 +195,7 @@ $(document).ready ->
 		, 500
 
 	window.animateSyncPicto = () ->
-		$('.sync-picto').css 'transform', 'rotate(-5400deg)'
+		$('.sync-picto').css 'transform', 'rotate(-15000deg)'
 
 	window.beginScrollSlide = (slide) ->
 		window.isScrolling = true
@@ -293,6 +293,7 @@ $(document).ready ->
 		if window.slideAmount > 100
 			$('.discover-more').click()
 			window.slideAmount = 0
+		
 
 	$('.scroll-slide').on 'mousewheel', (e) ->
 		if window.isScrolling
@@ -304,6 +305,23 @@ $(document).ready ->
 		if window.slideAmount > 100
 			$('.scroll-slide-next').click()
 			window.slideAmount = 0
+		if window.slideAmount < -100
+			$('.scroll-slide-left-'+window.currentScrollSlide).animate {
+				top: '-100%'
+			}, 600
+			$('.scroll-slide-right-'+window.currentScrollSlide).animate {
+				bottom: '-100%'
+			}, 600
+			$('.notice-display').fadeOut 300
+			$('.notice-display-'+window.currentScrollSlide).fadeOut 300
+			$('.scroll-slide-next').fadeOut 300
+			$('.hidden-nav').animate {
+				top: '-=60px'
+			}, 500
+			window.currentScrollSlide = 'b'
+			window.slideAmount = 0
+
+		# window.isScrolling = false
 
 		
 	$('.hidden-nav-title').click ->

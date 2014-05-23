@@ -180,9 +180,9 @@ div.movie-more {
 	height: 2000px;
 	.synopsis {
 
-		width: 500px; margin: auto; height: 700px;
+		width: 650px; margin: auto; height: 700px;
 		h2 { padding-top: 10px; color: #888; font-size: 27px; letter-spacing: 1px;}
-		.content { height: 250px; text-transform: none; color: black; font-size: 14px; line-height: 20px; }
+		.content { height: 250px; text-transform: none; color: black; font-size: 16px; line-height: 22px; }
 	}
 
 	.trailer {
@@ -409,9 +409,9 @@ div.movie-more {
 
 .progression-wrapper {
 	width: 100%;
-	position: absolute; bottom: 0px; left: 0px;
+	position: absolute; bottom: -12px; left: 0px;
 	height: 12px;
-	background: #888;
+	background: #666;
 	cursor: pointer;
 	z-index: 10;
 
@@ -589,7 +589,7 @@ div.movie-more {
 			background: asset-url('sync.png') no-repeat center top;
 			width: 35px; height: 30px;
 			margin: 0 auto 40px auto;
-			transition: all 50s linear;
+			transition: all 200s linear;
 		}
 
 		.title { text-transform: uppercase; font-size: 26px; letter-spacing: 3px; -webkit-font-smoothing: antialiased; }

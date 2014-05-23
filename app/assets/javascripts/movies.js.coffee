@@ -64,6 +64,8 @@ $(document).ready ->
 		}, 0, () ->
 			# document.location.href = NEXT_URL;
 
+		$('.finder-progression').hide(0);
+
 		$('.line-left, .line-right, .find-another ').fadeOut 0
 		$('.movie-found img, .movie-found .found').css 'visibility', 'hidden'
 		$('.movie-actions').fadeOut 0, () ->

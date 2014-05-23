@@ -15,6 +15,8 @@
 //= require jquery.easing
 //= require jquery.preload
 //= require jquery.bgpos
+//= require TweenMax
+//= require jquery.gsap
 //= require api
 //= require api-messages-types
 //= require_tree .

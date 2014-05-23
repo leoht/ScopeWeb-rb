@@ -45,9 +45,17 @@ api.on NOTICE, (data) ->
 
 	window.lastNoticeTimecode = data.timecode
 	$('.notice-flash-'+data.category_nicename).fadeIn 400
+
+	toggleClassFcn = ->
+		$('.notice-flash-'+data.category_nicename).animate { opacity: 0.7 }, 400, ->
+			$(this).animate { opacity: 1 }
+
+	interval = setInterval(toggleClassFcn, 1000);
+
 	setTimeout ->
 		$('.notice-flash').fadeOut 400
-	, 3000
+		window.clearInterval(interval)
+	, 7000
 
 api.on COMMENT, (data) ->
 	$('.notice-flash-comment').fadeIn 400

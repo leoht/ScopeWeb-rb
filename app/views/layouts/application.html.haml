@@ -14,7 +14,7 @@
 				%span.blue> 0
 				PE
 
-			= link_to 'Les films', :movies, :class => 'active'
+			= link_to 'Les films', find_movies_path(:skip => 1), :class => 'active'
 
 			= link_to 'On trouve pour vous', :find_movies
 
@@ -31,7 +31,7 @@
 				- if current_user
 					= link_to 'Déconnexion', signout_path, id: 'sign_out'
 				- else
-					= link_to 'Inscription', login_path, id: 'sign_in'
+					= link_to 'Inscription', login_path('target' => request.original_url), id: 'sign_in'
 
 
 		= yield

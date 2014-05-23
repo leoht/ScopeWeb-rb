@@ -6,6 +6,45 @@ window.initializeMediaPlayer = ->
 	window.mediaPlayer = document.getElementById 'player'
 	window.mediaPlayer.controls = false
 
+	window.progression = $('#player-progression')
+	window.mediaPlayer.addEventListener 'timeupdate', ->
+		percent = Math.floor((100 / window.mediaPlayer.duration) * window.mediaPlayer.currentTime);
+		window.progression.css 'width', percent+'%';
+		# progression.getElementsByTagName('span')[0].innerHTML = percent;
+	, false
+
+	$('.progression-wrapper').click (e) ->
+		offsetX = e.pageX
+		percent = (offsetX * 100) / $(this).width()
+
+		window.progression.css 'width', percent+'%';
+
+		time = Number((percent * window.mediaPlayer.duration) / 100)
+
+		console.log(time)
+
+		window.mediaPlayer.currentTime = time
+
+	$('.progression-wrapper').mousemove (e) ->
+
+		offsetX = e.pageX
+		percent = (offsetX * 100) / $(this).width()
+
+		s = parseInt((percent * window.mediaPlayer.duration) / 100)
+
+		m = parseInt s/60
+		s %= 60
+		h = parseInt m/60
+		m %= 60
+
+		textTime = String(h).lpad('0', 2) + ':' + String(m).lpad('0', 2) + ':' + String(s).lpad('0', 2)
+
+		$('.progression-tooltip').text(textTime).css('left', offsetX - 20).show();
+
+	$('.progression-wrapper').mouseout (e) ->
+		$('.progression-tooltip').hide()
+
+
 window.togglePlayPause = ->
 	btn = document.getElementById 'play-pause-button'
 	if window.mediaPlayer.paused or window.mediaPlayer.ended
@@ -68,3 +107,5 @@ window.toggleFastRewind = ->
 $ () ->
 	$('.app-overlay .close').click ->
 		$('.app-overlay').fadeOut 500
+
+	

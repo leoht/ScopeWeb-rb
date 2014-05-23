@@ -18,3 +18,10 @@
 //= require api
 //= require api-messages-types
 //= require_tree .
+
+String.prototype.lpad = function(padString, length) {
+    var str = this;
+    while (str.length < length)
+        str = padString + str;
+    return str;
+}

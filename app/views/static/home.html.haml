@@ -30,7 +30,7 @@
 
 	.home-bottom	
 		.home-actions
-			= link_to 'Accès direct', :movies, class: 'button-link'
+			= link_to 'Accès direct', find_movies_path(:skip => 1), class: 'button-link'
 			= link_to 'On vous trouve un film', :find_movies, class: 'button-link'
 			= link_to "L'application", :application, class: 'button-link'
 

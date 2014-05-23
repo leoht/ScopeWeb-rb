@@ -3,15 +3,31 @@
 
     .info
         .sync-picto
-        .title.with-font Synchronisation
+        .title.with-font
+            - if current_user
+                En attente de synchronisation
+            -else
+                Synchronisation
         .text Synchronisez le lecteur web avec votre tablette ou smartphone via l'application SCOPE.
 
+        .subtitle 1. Téléchargez l'application Scope
         .appstore-link
             %img{ src: '/assets/appstore.png' }
 
+
         - if current_user
-            .text.text-facebook Identifiez vous avec Facebook sur l'application pour synchroniser votre appareil mobile avec le film.
+            .subtitle 2. Identifiez-vous avec Facebook sur l'application
         - else
+            .subtitle 2. Entrez ce code d'identification sur l'application
+
+    - if current_user
+        :javascript
+            $(function() {
+                animateSyncPicto();
+            });
+    - else
+        .code
+            .code-display
 
 
 .player-wrapper
@@ -25,6 +41,10 @@
         %button{ onclick: 'toggleFastForward()' } >>
 
         %button.get-code-button Get code
+
+    .progression-tooltip
+    .progression-wrapper
+        .progression#player-progression
 
     .notice-flash.notice-flash-themes
     .notice-flash.notice-flash-anecdotes

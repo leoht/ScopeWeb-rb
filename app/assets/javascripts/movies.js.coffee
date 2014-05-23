@@ -74,7 +74,7 @@ $(document).ready ->
 		$('.movie.movie-found').animate { backgroundPositionY: '-200' }, 0
 
 		$('.navbar .current-find').animate {
-			left: 215,
+			left: 215	,
 			width: 65
 		}, 0
 
@@ -193,6 +193,9 @@ $(document).ready ->
 		setTimeout () ->
 			$('.circle').css 'transform', 'rotate(0deg)'
 		, 500
+
+	window.animateSyncPicto = () ->
+		$('.sync-picto').css 'transform', 'rotate(-5400deg)'
 
 	window.beginScrollSlide = (slide) ->
 		window.isScrolling = true

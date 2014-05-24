@@ -616,7 +616,8 @@ div.movie-more {
 		}
 	}
 
-	.skip-fb {
+	a.skip-fb {
+		display: block;
 		text-align: center;
 		color: #f8f8f8;
 	}

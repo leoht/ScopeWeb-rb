@@ -46,16 +46,11 @@ api.on NOTICE, (data) ->
 	window.lastNoticeTimecode = data.timecode
 	$('.notice-flash-'+data.category_nicename).fadeIn 400
 
-	toggleClassFcn = ->
-		$('.notice-flash-'+data.category_nicename).animate { opacity: 0.7 }, 400, ->
-			$(this).animate { opacity: 1 }
-
-	interval = setInterval(toggleClassFcn, 1000);
+	TweenMax.to($('.notice-flash-'+data.category_nicename), 1, { alpha: 0.7, yoyo: true, repeat: 7 })
 
 	setTimeout ->
 		$('.notice-flash').fadeOut 400
-		window.clearInterval(interval)
-	, 7000
+	, 10000
 
 api.on COMMENT, (data) ->
 	$('.notice-flash-comment').fadeIn 400

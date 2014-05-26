@@ -80,6 +80,8 @@ $(document).ready ->
 			width: 65
 		}, 0
 
+		$('.finder-progression').hide(0)
+
 		$('.discover-more').click () ->
 			if window.isMenuDisplayed
 				return

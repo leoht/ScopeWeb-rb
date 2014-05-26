@@ -22,7 +22,7 @@ $scope_blue: #04e5e8;
 		position: absolute; top: calc(34% + 100px); height: 1px; background-color: #a5a8ac; width: 35%;
 	}
 	.line-right {
-		position: absolute; top: calc(34% + 100px); right: 300px; height: 1px; background-color: #a5a8ac; width: 18%;
+		position: absolute; top: calc(34% + 100px); right: 300px; height: 1px; background-color: #a5a8ac; width: 14%;
 	}
 
 	.find-another {
@@ -182,7 +182,7 @@ div.movie-more {
 
 		width: 650px; margin: auto; height: 700px;
 		h2 { padding-top: 10px; color: #888; font-size: 27px; letter-spacing: 1px;}
-		.content { height: 250px; text-transform: none; color: black; font-size: 16px; line-height: 22px; }
+		.content { height: 180px; text-transform: none; color: black; font-size: 14px; line-height: 18px; }
 	}
 
 	.trailer {
@@ -614,5 +614,11 @@ div.movie-more {
 			background: asset-url('fake-code.png') no-repeat center top;
 			position: relative; left: 8px;
 		}
+	}
+
+	a.skip-fb {
+		display: block;
+		text-align: center;
+		color: #f8f8f8;
 	}
 }
